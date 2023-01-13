@@ -1,0 +1,7 @@
+{
+  "name": "UK-Core-Access",
+  "version": "1.0.0",
+  "devDependencies": {
+    "fsh-sushi": "^2.7.1"
+  }
+}
