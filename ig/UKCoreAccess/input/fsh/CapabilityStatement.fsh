@@ -7,7 +7,8 @@ Title: "UKCore Access"
 * kind = #capability
 * fhirVersion = #4.0.1
 * format = #json
-* description = "Server supports read-only access for direct care and subject of care access."
+* description = "Provider supports read-only access for direct care and subject of care access."
+* software.name = "UKCore Access Provider"
 * rest.mode = #server
 
 //Patient
