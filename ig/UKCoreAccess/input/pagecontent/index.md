@@ -1,10 +1,16 @@
-This implementation guide specifies the requirements for a FHIR endpoint providing read-only access for direct care
-and subject of care access.
+# UKCore Access
+This HL7 FHIR Implementation Guide specifies the requirements for a RESTful endpoint providing read-only access for direct care
+and subject of care access within the UK. It uses UK-specific resource profiles defined in the
+[UK Core 1.0.0](https://simplifier.net/guide/uk-core-implementation-guide/Home?version=1.0.0) implementation guide.
 
-It uses UK-specific resource profiles defined in the [UK Core](https://simplifier.net/guide/uk-core-implementation-guide/Home?version=1.0.0) implementation guide.
+### Actors
+**Provider**: Implements a FHIR RESTful API providing the UKCore Access [capabilities](./CapabilityStatement-UKCoreAccess.html)
 
-### Locate a FHIR Server
-It is assumed that URLs for FHIR Servers will be found from sources such as:
+**Consumer**: Requests information from the Provider
+
+### Prerequisites
+#### Locating a FHIR Server
+It is assumed that Consumers will retrieve the URLs for FHIR RESTful endpoints implemented by Providers from sources such as:
 - local configuration
 - local, regional or national directory services
 
