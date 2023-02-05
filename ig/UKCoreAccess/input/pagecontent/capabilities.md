@@ -6,7 +6,7 @@ specifies which resource types and interactions are supported by the FHIR endpoi
 GET [base]/metadata
 ```
 
-> TODO: how to interpret capabilities ...
+> TODO: how to interpret the capabilities ...
 
 ### Find a patient
 The Provider SHALL support the [search](https://hl7.org/fhir/R4/http.html#search) interaction on the 
