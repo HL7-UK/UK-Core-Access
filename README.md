@@ -14,7 +14,7 @@ $ npm i
 
 ### Build
 ```
-$ sushi ./ig/UKCoreAccess
+$ sushi
 ```
 
 ## Publish
@@ -23,7 +23,6 @@ Java Runtime 55+
 
 ### Install
 ```
-$ cd ./ig/UKCoreAccess
 $ ./_updatePublisher.sh
 ```
 ### Build
