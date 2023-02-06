@@ -36,4 +36,4 @@ This project is supported by [HL7 UK](https://www.hl7.org.uk/) with contribution
 - Dunmail Hodkinson ([Black Pear Software](https://blackpear.com))
 - Richard Kavanagh ([Kainos](https://kainos.com))
 - Omar Khan ([NHS Digital](https://digital.nhs.uk))
-- Rik Smithies 
+- Rik Smithies ([NProgram](http://nprogram.co.uk))
