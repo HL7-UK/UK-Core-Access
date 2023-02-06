@@ -71,7 +71,8 @@ dependencies:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Capabilities: capabilities.html
+  Capabilities: 
+    Patient Search: capabilities.html
   Safety: safety.html
   Security: security.html
   Artifacts: artifacts.html
