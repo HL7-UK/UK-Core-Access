@@ -11,7 +11,11 @@ GET [base]/metadata
 ### Find a patient
 The Provider SHALL support the [search](https://hl7.org/fhir/R4/http.html#search) interaction on the 
 [Patient](https://hl7.org/fhir/R4/patient.html) resource so that a Consumer can retrieve a set of Patient resources
-matching the search criteria.
+matching the search criteria and conforming to the [UKCore Patient](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-Patient?version=1.0.0) profile.
+
+
+
+
 
 > TODO: Relation to PDQm as a subset?
 
@@ -58,10 +62,10 @@ The Provider MAY support search by H&C Number.
 
 ##### Find a patient by local identifier
 Organisations holding patient data are likely to have their own identifier systems _e.g._ a hospital number from
-a PAS system. Organisations can allocate their own system  _e.g._ `https://fhir.mytrust.nhs.uk/Id/pas-number` but must ensure that 
-these do not clash with those used elsewhere.
-
-> TODO: is there any guidance for allocating identifier systems for an organisation? (_cf_ OIDs)
+a PAS system.
+Organisations may use existing OIDs or allocate their own system but SHALL ensure that these do not 
+clash with those used elsewhere.
+Health and Care organisations in Wales should follow the NHS Wales Data Standards for [Welsh Patient Identifiers](https://simplifier.net/guide/FHIR-Standards-Wales-Implementation-Guide/Home/Design/Naming-Systems.page.md?version=current),
 
 The Provider MAY support search by local identifier:
 ```
