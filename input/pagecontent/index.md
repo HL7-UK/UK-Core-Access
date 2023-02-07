@@ -3,14 +3,19 @@ This HL7 FHIR Implementation Guide specifies the requirements for a RESTful endp
 and subject of care access within the UK. It uses UK-specific resource profiles defined in the
 [UK Core 1.0.0](https://simplifier.net/guide/uk-core-implementation-guide/Home?version=1.0.0) implementation guide.
 
+Data Controllers holding personal data related to health and care may provide the capabilities specified in this
+implementation guide when implementing systems to allow authenticated and authorised consumers to access the data.
+
 ### Actors
-**Provider**: Implements a FHIR RESTful API providing the UKCore Access [capabilities](./CapabilityStatement-UKCoreAccess.html)
+The following Actors participate in the interactions described in this implementation guide:
 
-**Consumer**: Requests information from the Provider
+| Actors | Role                                                                                                                |
+|--------|---------------------------------------------------------------------------------------------------------------------|
+| Provider | Instantiates a FHIR RESTful API providing the UKCore Access [capabilities](./CapabilityStatement-UKCoreAccess.html) |
+| Consumer | Requests information from one or more Providers                                                                     |
 
-### Prerequisites
-#### Locating a FHIR Server
-It is assumed that Consumers will retrieve the URLs for FHIR RESTful endpoints implemented by Providers from sources such as:
+### Locating a FHIR Server
+It is assumed that Consumers will discover the URLs of FHIR RESTful endpoints from sources including:
 - local configuration
 - local, regional or national directory services
 

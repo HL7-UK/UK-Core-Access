@@ -4,9 +4,9 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: ukcore-access
-canonical: https://fhir.hl7.org.uk
+canonical: https://fhir.hl7.org.uk/ukcore-access
 name: UKCoreAccess
-title: HL7UK - UKCore Access
+title: HL7 UK - UKCore Access
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
 version: 0.1.0
@@ -14,7 +14,7 @@ fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 license: Apache-2.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
-jurisdiction: urn:iso:std:iso:3166#GB-EAW "England and Wales" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+jurisdiction: urn:iso:std:iso:3166#GB "United Kingdom of Great Britain and Northern Ireland" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: HL7 UK
   url: https://www.hl7.org.uk/
@@ -71,10 +71,11 @@ dependencies:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Capabilities: 
-    Patient Search: capabilities.html
-  Safety: safety.html
-  Security: security.html
+  Capabilities:
+    Server Metadata: server_metadata.html
+    Patient Search: patient_search.html
+    Exception Handling: exception_handling.html
+  Safety and Security: safety_and_security.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮

@@ -1,4 +1,9 @@
-RuleSet: Resource(type, profile, expectation)
+RuleSet: Resource(type, profile)
+* rest.resource[+]
+  * type = {type}
+  * profile = Canonical({profile})
+
+RuleSet: ResourceWithExpectation(type, profile, expectation)
 * rest.resource[+]
   * type = {type}
   * profile = Canonical({profile})
@@ -6,7 +11,12 @@ RuleSet: Resource(type, profile, expectation)
     * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * valueCode = {expectation}
 
-RuleSet: Interaction(code, expectation)
+RuleSet: Interaction(code)
+* rest.resource[=]
+  * interaction[+]
+    * code = {code}
+
+RuleSet: InteractionWithExpectation(code, expectation)
 * rest.resource[=]
   * interaction[+]
     * code = {code}
@@ -19,7 +29,13 @@ RuleSet: WithInteractionDocumentation(documentation)
   * interaction[=]
     * documentation = "{documentation}"
 
-RuleSet: SearchParam(name, type, expectation)
+RuleSet: SearchParam(name, type)
+* rest.resource[=]
+  * searchParam[+]
+    * name = "{name}"
+    * type = {type}
+
+RuleSet: SearchParamWithExpectation(name, type, expectation)
 * rest.resource[=]
   * searchParam[+]
     * name = "{name}"

@@ -3,5 +3,10 @@
   "version": "1.0.0",
   "devDependencies": {
     "fsh-sushi": "^2.7.1"
+  },
+  "scripts": {
+    "compile": "sushi",
+    "build": "./_genonce.sh",
+    "start": "open ./output/index.html"
   }
 }
