@@ -1,7 +1,7 @@
-Instance: UKCoreAccess
+Instance: UKCoreAccessProvider
 InstanceOf: CapabilityStatement
 Usage: #definition
-Title: "UKCore Access"
+Title: "UKCore Access Provider"
 * status = #active
 * date = 2023-02-01
 * kind = #requirements

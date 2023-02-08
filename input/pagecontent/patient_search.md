@@ -5,9 +5,9 @@ matching the search criteria and conforming to the [UKCore Patient](https://simp
 
 The Provider SHALL be capable of processing the following search parameters:
 
-| Parameter                                      | Type      | Description |
-|------------------------------------------------|-----------|-------------|
-| [identifier](./patient_search.html#identifier) | [token](https://hl7.org/fhir/R4/search.html#token) | A patient identifier |
+| Parameter                                              | Type      | Description |
+|--------------------------------------------------------|-----------|-------------|
+| [identifier](patient_search.html#identifier-parameter) | [token](https://hl7.org/fhir/R4/search.html#token) | A patient identifier |
 
 #### identifier parameter
 ##### Find a patient by NHS Number
@@ -20,7 +20,7 @@ GET [base]/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|[NHS Number]
 ```
 
 For example, when a Consumer sends the request `GET https://fhir.provider.nhs.uk/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888`
-the Provider would respond with a Bundle containing Patient resources with NHS Number `9912003888`. [[Example](./Bundle-Example-UKCoreAccess-Bundle-patientsearchbynhsnumber.html)]
+the Provider would respond with a Bundle containing Patient resources with NHS Number `9912003888`. [[Example](Bundle-response-patientsearchbynhsnumber.html)]
 
 ##### Find a patient by CHI Number
 The national identifier within Scotland is the [CHI Number](https://www.ndc.scot.nhs.uk/Dictionary-A-Z/Definitions/index.asp?ID=128)
@@ -55,7 +55,7 @@ GET [base]/Patient?identifier=[Local system]|[PAS Identifier]
 ```
 
 For example, when a Consumer sends the request `GET https://fhir.provider.nhs.uk/Patient?identifier=https://fhir.provider.nhs.uk/Id/pas-identifier|12345`
-the Provider would respond with a Bundle containing Patient resources with hospital number `12345` issued by the `provider` organisation. [[Example](./Bundle-Example-UKCoreAccess-Bundle-patientsearchbylocalsystem.html)]
+the Provider would respond with a Bundle containing Patient resources with hospital number `12345` issued by the `provider` organisation. [[Example](Bundle-response-patientsearchbylocalsystem.html)]
 
 ##### Find a patient by identifier value
 It is possible to search for patient by providing an identifier without specifying the identifier system.
@@ -66,7 +66,7 @@ GET [base]/Patient?identifier=[Identifier]
 ```
 
 For example, when a Consumer sends the request `GET https://fhir.provider.nhs.uk/Patient?identifier=12345`
-the Provider would respond with a Bundle containing any Patient resources with identifier `12345` issued by any organisation. [[Example](./Bundle-Example-UKCoreAccess-Bundle-patientsearchbyidentifiervalue.html)]
+the Provider would respond with a Bundle containing any Patient resources with identifier `12345` issued by any organisation. [[Example](Bundle-response-patientsearchbyidentifiervalue.html)]
 
 #### Related standards
 > TODO: Document relation to IHE PDQm (subset of PDQm)

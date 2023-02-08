@@ -9,10 +9,10 @@ implementation guide when implementing systems to allow authenticated and author
 ### Actors
 The following Actors participate in the interactions described in this implementation guide:
 
-| Actors | Role                                                                                                                |
-|--------|---------------------------------------------------------------------------------------------------------------------|
-| Provider | Instantiates a FHIR RESTful API providing the UKCore Access [capabilities](./CapabilityStatement-UKCoreAccess.html) |
-| Consumer | Requests information from one or more Providers                                                                     |
+| Actors | Role                                                                                                                        |
+|--------|-----------------------------------------------------------------------------------------------------------------------------|
+| Provider | Instantiates a FHIR RESTful API providing the UKCore Access [capabilities](./CapabilityStatement-UKCoreAccessProvider.html) |
+| Consumer | Requests information from one or more Providers                                                                             |
 
 ### Locating a FHIR Server
 It is assumed that Consumers will discover the URLs of FHIR RESTful endpoints from sources including:

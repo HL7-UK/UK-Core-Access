@@ -1,4 +1,4 @@
-Instance: Example-UKCoreAccess-OperationOutcome-warning
+Instance: Warning
 InstanceOf: OperationOutcome
 Description: "Example OperationOutcome containing warning"
 * id = "264a0630-af8f-4a78-9367-01d6871fec77"
@@ -7,7 +7,7 @@ Description: "Example OperationOutcome containing warning"
   * code = #timeout
   * diagnostics = "PAS unavailable - search used cached data which may be up to 24h old"
 
-Instance: Example-UKCoreAccess-Bundle-searchreturnswarning
+Instance: Response-searchreturnswarning
 InstanceOf: Bundle
 Description: "Search containing a warning message"
 * type = #searchset
@@ -18,9 +18,9 @@ Description: "Search containing a warning message"
   * fullUrl = "https://fhir.provider.nhs.uk/Patient/57bae551-2c5d-4def-a541-4b156ec49497"
   * search
     * mode = #match
-  * resource = Example-UKCore-Patient-RichardSmith
+  * resource = RichardSmith
 * entry[+]
-  * fullUrl = "https://fhir.provider.nhs.uk/OperationOutcome/57bae551-2c5d-4def-a541-4b156ec49497"
+  * fullUrl = "urn:uuid:57bae551-2c5d-4def-a541-4b156ec49497"
   * search
     * mode = #outcome
-  * resource = Example-UKCoreAccess-OperationOutcome-warning
+  * resource = Warning

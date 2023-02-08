@@ -8,5 +8,5 @@ For example, when a Provider sends the request:
 ```
 GET https://fhir.provider.nhs.uk/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888
 ```
-the Provider MAY respond with a Bundle including an OperationOutcome in addition to matches. [[Example](./Bundle-Example-UKCoreAccess-Bundle-searchreturnswarning.html)]
+the Provider MAY respond with a Bundle including an OperationOutcome in addition to matches. [[Example](Bundle-response-searchreturnswarning.html)]
 
