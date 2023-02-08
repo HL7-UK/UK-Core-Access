@@ -20,7 +20,7 @@ GET [base]/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|[NHS Number]
 ```
 
 For example, when a Consumer sends the request `GET https://fhir.provider.nhs.uk/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888`
-the Provider would respond with a Bundle containing Patient resources with NHS Number `9912003888`. [[Example](Bundle-response-patientsearchbynhsnumber.html)]
+the Provider would respond with a Bundle containing Patient resources with NHS Number `9912003888`. [[Example](Bundle-Response-patientsearchbynhsnumber.html)]
 
 ##### Find a patient by CHI Number
 The national identifier within Scotland is the [CHI Number](https://www.ndc.scot.nhs.uk/Dictionary-A-Z/Definitions/index.asp?ID=128)
@@ -55,7 +55,7 @@ GET [base]/Patient?identifier=[Local system]|[PAS Identifier]
 ```
 
 For example, when a Consumer sends the request `GET https://fhir.provider.nhs.uk/Patient?identifier=https://fhir.provider.nhs.uk/Id/pas-identifier|12345`
-the Provider would respond with a Bundle containing Patient resources with hospital number `12345` issued by the `provider` organisation. [[Example](Bundle-response-patientsearchbylocalsystem.html)]
+the Provider would respond with a Bundle containing Patient resources with hospital number `12345` issued by the `provider` organisation. [[Example](Bundle-Response-patientsearchbylocalsystem.html)]
 
 ##### Find a patient by identifier value
 It is possible to search for patient by providing an identifier without specifying the identifier system.
@@ -66,7 +66,7 @@ GET [base]/Patient?identifier=[Identifier]
 ```
 
 For example, when a Consumer sends the request `GET https://fhir.provider.nhs.uk/Patient?identifier=12345`
-the Provider would respond with a Bundle containing any Patient resources with identifier `12345` issued by any organisation. [[Example](Bundle-response-patientsearchbyidentifiervalue.html)]
+the Provider would respond with a Bundle containing any Patient resources with identifier `12345` issued by any organisation. [[Example](Bundle-Response-patientsearchbyidentifiervalue.html)]
 
 #### Related standards
 > TODO: Document relation to IHE PDQm (subset of PDQm)
