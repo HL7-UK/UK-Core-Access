@@ -13,9 +13,9 @@ Description: "Search containing a warning message"
 * type = #searchset
 * link
   * relation = "self"
-  * url = "https://fhir.provider.nhs.uk/Patient?identifier=12345"
+  * url = "https://fhir.example-provider.nhs.uk/Patient?identifier=12345"
 * entry[+]
-  * fullUrl = "https://fhir.provider.nhs.uk/Patient/57bae551-2c5d-4def-a541-4b156ec49497"
+  * fullUrl = "https://fhir.example-provider.nhs.uk/Patient/57bae551-2c5d-4def-a541-4b156ec49497"
   * search
     * mode = #match
   * resource = RichardSmith

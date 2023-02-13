@@ -12,7 +12,7 @@ Description: "Example patient Richard Smith"
     * valueCodeableConcept
       * coding = https://fhir.hl7.org.uk/CodeSystem/UKCore-NHSNumberVerificationStatusEngland#01 "Number present and verified"
 * identifier[+]
-  * system = "https://fhir.provider.nhs.uk/Id/pas-identifier"
+  * system = "https://fhir.example-provider.nhs.uk/Id/pas-identifier"
   * value = "12345"
 * name
   * use = #official
@@ -53,9 +53,9 @@ Description: "Result of searching for a patient by NHS Number"
 * type = #searchset
 * link
   * relation = "self"
-  * url = "https://fhir.provider.nhs.uk/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888"
+  * url = "https://fhir.example-provider.nhs.uk/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888"
 * entry
-  * fullUrl = "https://fhir.provider.nhs.uk/Patient/57bae551-2c5d-4def-a541-4b156ec49497"
+  * fullUrl = "https://fhir.example-provider.nhs.uk/Patient/57bae551-2c5d-4def-a541-4b156ec49497"
   * search
     * mode = #match
   * resource = RichardSmith
@@ -66,9 +66,9 @@ Description: "Result of searching for a patient by local system"
 * type = #searchset
 * link
   * relation = "self"
-  * url = "https://fhir.provider.nhs.uk/Patient?identifier=https://fhir.provider.nhs.uk/Id/pas-identifier|12345"
+  * url = "https://fhir.example-provider.nhs.uk/Patient?identifier=https://fhir.example-provider.nhs.uk/Id/pas-identifier|12345"
 * entry
-  * fullUrl = "https://fhir.provider.nhs.uk/Patient/57bae551-2c5d-4def-a541-4b156ec49497"
+  * fullUrl = "https://fhir.example-provider.nhs.uk/Patient/57bae551-2c5d-4def-a541-4b156ec49497"
   * search
     * mode = #match
   * resource = RichardSmith
@@ -79,14 +79,14 @@ Description: "Result of searching for a patient by identifier value"
 * type = #searchset
 * link
   * relation = "self"
-  * url = "https://fhir.provider.nhs.uk/Patient?identifier=12345"
+  * url = "https://fhir.example-provider.nhs.uk/Patient?identifier=12345"
 * entry[+]
-  * fullUrl = "https://fhir.provider.nhs.uk/Patient/57bae551-2c5d-4def-a541-4b156ec49497"
+  * fullUrl = "https://fhir.example-provider.nhs.uk/Patient/57bae551-2c5d-4def-a541-4b156ec49497"
   * search
     * mode = #match
   * resource = RichardSmith
 * entry[+]
-  * fullUrl = "https://fhir.provider.nhs.uk/Patient/b88f0099-5213-4502-a49d-cc3887027bdd"
+  * fullUrl = "https://fhir.example-provider.nhs.uk/Patient/b88f0099-5213-4502-a49d-cc3887027bdd"
   * search
     * mode = #match
   * resource = MaryMorris

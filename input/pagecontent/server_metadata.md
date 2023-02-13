@@ -9,7 +9,7 @@ The CapabilityStatement SHALL be conformant with this implementation guide and S
 The Provider MAY provide further capabilities at this FHIR endpoint, in addition to those required by the UKCore Access CapabilityStatement.
 
 
-For example, when a Consumer sends the request `GET https://fhir.provider.nhs.uk/metadata`
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/metadata`
 the Provider would respond with a CapabilityStatement resource. [[Example](CapabilityStatement-UKCoreAccessProvider-instance.html)]
 
 A Consumer MAY use the CapabilityStatement during implementation to discover the capabilities of a FHIR endpoint provided by a UKCore Access Provider.

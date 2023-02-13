@@ -11,7 +11,7 @@ Title: "UKCore Access"
 * instantiates = Canonical(UKCoreAccessProvider)
 * implementation
   * description = "FHIR Server providing access to information controlled by Provider"
-  * url = "https://fhir.provider.nhs.uk/"
+  * url = "https://fhir.example-provider.nhs.uk/"
 * rest
   * mode = #server
   * security

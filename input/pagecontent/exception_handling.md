@@ -4,6 +4,6 @@ Providers MAY communicate errors, warnings and additional information by includi
 [search](https://hl7.org/fhir/R4/http.html#search) interaction. 
 Consumers SHALL check for the existence of OperationOutcomes and act on them.
 
-For example, when a Provider sends the request `GET https://fhir.provider.nhs.uk/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888`
+For example, when a Provider sends the request `GET https://fhir.example-provider.nhs.uk/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9912003888`
 the Provider MAY respond with a Bundle including an OperationOutcome in addition to matches. [[Example](Bundle-Response-searchreturnswarning.html)]
 
