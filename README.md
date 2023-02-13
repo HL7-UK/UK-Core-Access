@@ -1,31 +1,7 @@
 # UK-Core-Access
 
-## Build
-### Prerequisites
-NodeJS
+This HL7 FHIR Implementation Guide specifies the requirements for a RESTful endpoint providing read-only access for 
+direct care and subject of care access within the UK.
 
-### Install
-Clone repository from github
-
-Import dependencies
-```
-$ npm i
-```
-
-### Build
-```
-$ sushi
-```
-
-## Publish
-### Prerequisites
-Java Runtime 55+
-
-### Install
-```
-$ ./_updatePublisher.sh
-```
-### Build
-```
-$ ./genonce.sh
-```
+The development build is published to:
+https://build.fhir.org/ig/HL7-UK/UK-Core-Access/index.html
