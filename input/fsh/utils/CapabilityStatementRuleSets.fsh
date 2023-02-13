@@ -48,3 +48,31 @@ RuleSet: WithSearchParamDocumentation(documentation)
 * rest.resource[=]
   * searchParam[=]
     * documentation = "{documentation}"
+
+RuleSet: SearchParamCombination
+* rest.resource[=]
+  * extension[+]
+    * url = Canonical(http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination)
+
+RuleSet: SearchParamCombinationWithExpectation(expectation)
+* rest.resource[=]
+  * extension[+]
+    * url = Canonical(http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination)
+    * extension[+]
+      * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * valueCode = {expectation}
+
+
+RuleSet: RequiringSearchParam(name)
+* rest.resource[=]
+  * extension[=]
+    * extension[+]
+      * url = "required"
+      * valueString  = "{name}"
+
+RuleSet: AllowingSearchParam(name)
+* rest.resource[=]
+  * extension[=]
+    * extension[+]
+      * url = "optional"
+      * valueString  = "{name}"
