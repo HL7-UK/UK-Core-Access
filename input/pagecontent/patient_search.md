@@ -6,7 +6,7 @@ matching the search criteria and conforming to the [UKCore Patient](https://simp
 The Provider is required to support search parameters as follows:
 
 | Conformance  | Parameter                                              | Type                                                 | Description                                                                                                                                   |
-|--------------|--------------------------------------------------------|------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
+|--------------|--------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | SHALL        | [_id](patient_search.html#_id-parameter)               | [token](https://hl7.org/fhir/R4/search.html#token)   |                                                                                                                                               |
 | SHOULD       | [birthdate](patient_search.html#identifier-parameter)  | [date](https://hl7.org/fhir/R4/search.html#date)     | The patient's date of birth                                                                                                                   |
 | SHOULD       | [family](patient_search.html#family-parameter)         | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the family name of the patient                                                                                                   |
@@ -24,23 +24,65 @@ The Provider is required to support search parameter combinations as follows:
 | SHOULD       | gender+family                                          |
 | SHOULD       | gender+name                                            |
 
+The Consumer SHALL handle search results where the Provider returns results as a series of [pages](https://hl7.org/fhir/R4/search.html#count).
 
 #### _id parameter
-TODO: documentation
+The Provider SHALL support search by the logical identifier of the Patient resource:
+```
+GET [base]/Patient?_id=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?_id=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing Patient resources with id `b88f0099-5213-4502-a49d-cc3887027bdd`. [[Example](Bundle-Response-patientsearchbyid.html)]
 
 #### birthdate parameter
-TODO: documentation
+The Provider SHOULD support search by patient birthdate:
+```
+GET [base]/Patient?birthdate=[date]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?birthdate=1970-09-11`
+the Provider would respond with a Bundle containing Patient resources with birthdate `1970-09-11`. [[Example](Bundle-Response-patientsearchbybirthdate.html)]
+
+The Provider SHOULD support:
+- partial dates *e.g.* `birthdate=1970-09`
+- the `eq`, `ge`, `le` operators *e.g.* `birthdate=ge1970-09-01`
+- multiple date parameters *e.g.* `birthdate=ge1970-09-01&le1970-10-01`
 
 #### family parameter
-TODO: documentation
+The Provider SHOULD support search by patient family name:
+```
+GET [base]/Patient?family=[name]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?family=Smith`
+the Provider would respond with a Bundle containing Patient resources with family name starting with `Smith`. [[Example](Bundle-Response-patientsearchbyfamily.html)]
+
 
 #### gender parameter
-TODO: documentation
+The Provider SHOULD support search by patient gender:
+```
+GET [base]/Patient?gender=[code]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?gender=female`
+the Provider would respond with a Bundle containing Patient resources with gender `female`. [[Example](Bundle-Response-patientsearchbygender.html)]
 
 #### given parameter
-TODO: documentation
+The Provider SHOULD support search by patient given name:
+```
+GET [base]/Patient?given=[name]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?given=Rich`
+the Provider would respond with a Bundle containing Patient resources with given name starting with `Rich`. [[Example](Bundle-Response-patientsearchbygiven.html)]
 
 #### identifier parameter
+The Provider SHALL support search by identifier:
+```
+GET [base]/Patient?identifier=[system]|[value]
+```
+
 ##### Find a patient by NHS Number
 The national identifier within England, Wales and the Isle of Man is the [NHS Number](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/isb-0149-nhs-number)
 which uses the identifier system `https://fhir.nhs.uk/Id/nhs-number`.
@@ -100,35 +142,38 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing any Patient resources with identifier `12345` issued by any organisation. [[Example](Bundle-Response-patientsearchbyidentifiervalue.html)]
 
 #### name parameter
-TODO: documentation
+The Provider SHOULD support search by patient name:
+```
+GET [base]/Patient?name=[name]
+```
 
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?make=`
+the Provider would respond with a Bundle containing Patient resources where part of the name starts with `Rich`. [[Example](Bundle-Response-patientsearchbyname.html)]
 
 #### Related standards
 The Patient search capability in the UKCore Access implementation guide is closely related to patient search
 defined in international interoperability standards including:
 - [IHE Patient Demographics Query for Mobile](https://profiles.ihe.net/ITI/PDQm/index.html)
 - [HL7 International Patient Access](https://build.fhir.org/ig/HL7/fhir-ipa/index.html)
-- [NHS Personal Demographics Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir)
 
-The Providers are required to support search parameters as follows: 
+Servers are required to support Patient search parameters as follows: 
 
-| Parameter             | UKCore Access | PDQm  | IPA    | PDS FHIR API       |
-|-----------------------|---------------|-------|--------|--------------------|
-| _id                   | SHOULD        | SHALL | SHOULD | SHALL NOT          |
-| active                | MAY           | SHALL | MAY    | SHALL NOT          |
-| address               | MAY           | SHALL | MAY    | SHALL NOT          |
-| address-city          | MAY           | SHALL | MAY    | SHALL NOT          |
-| address-country       | MAY           | SHALL | MAY    | SHALL NOT          |
-| address-postalcode    | MAY           | SHALL | MAY    | ? address-postcode |
-| address-postcode      | MAY           | MAY   | MAY    | SHALL              |
-| address-state         | MAY           | SHALL | MAY    | SHALL NOT          |
-| birthdate             | SHOULD        | SHALL | SHOULD | SHALL              |
-| death-date            | MAY           | MAY   | MAY    | SHALL              |
-| family                | SHOULD        | SHALL | SHOULD | SHALL              |
-| gender                | SHOULD        | SHALL | SHOULD | SHALL              |
-| general-practitioner  | MAY           | MAY   | MAY    | SHALL              |
-| given                 | SHOULD        | SHALL | SHOULD | SHALL              |
-| identifier            | SHALL         | SHALL | SHOULD | SHALL NOT          |
-| mothersMaidenName     | MAY           | SHALL | MAY    | SHALL NOT          |
-| name                  | SHOULD        | SHALL | SHOULD | SHALL              |
-| telecom               | MAY           | SHALL | MAY    | SHALL NOT          |
+| Parameter             | UKCore Access | PDQm  | IPA    | 
+|-----------------------|---------------|-------|--------|
+| _id                   | SHOULD        | SHALL | SHOULD | 
+| active                | MAY           | SHALL | MAY    | 
+| address               | MAY           | SHALL | MAY    | 
+| address-city          | MAY           | SHALL | MAY    | 
+| address-country       | MAY           | SHALL | MAY    | 
+| address-postalcode    | MAY           | SHALL | MAY    | 
+| address-state         | MAY           | SHALL | MAY    | 
+| birthdate             | SHOULD        | SHALL | SHOULD | 
+| death-date            | MAY           | MAY   | MAY    | 
+| family                | SHOULD        | SHALL | SHOULD | 
+| gender                | SHOULD        | SHALL | SHOULD | 
+| general-practitioner  | MAY           | MAY   | MAY    | 
+| given                 | SHOULD        | SHALL | SHOULD | 
+| identifier            | SHALL         | SHALL | SHOULD | 
+| mothersMaidenName     | MAY           | SHALL | MAY    | 
+| name                  | SHOULD        | SHALL | SHOULD | 
+| telecom               | MAY           | SHALL | MAY    | 
