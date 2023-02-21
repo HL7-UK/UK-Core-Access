@@ -1,17 +1,17 @@
-Instance: UKCoreAccessProvider
+Instance: UKCoreAccessPatientIndexProvider
 InstanceOf: CapabilityStatement
 Usage: #definition
-Title: "UKCore Access Provider"
+Title: "UKCore Access Patient Index Provider"
 * status = #active
 * date = 2023-02-01
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format = #json
-* description = "Provider supports read-only access for direct care and subject of care access."
+* description = "Provider supports read-only access to a patient index for the purposes of direct care and subject of care access."
 * rest.mode = #server
 
 //Patient
-* insert ResourceWithExpectation(#Patient, https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient, #SHALL)
+* insert ResourceWithExpectation(#Patient, https://fhir.hl7.org.uk/ukcore-access/StructureDefinition/UKCoreAccessPatientIndexPatient, #SHALL)
 * insert InteractionWithExpectation(#search-type, #SHALL)
 * insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(family, #string, #SHOULD)

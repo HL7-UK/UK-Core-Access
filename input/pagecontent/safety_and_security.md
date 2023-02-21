@@ -21,7 +21,7 @@ clinical decisions will be taken using incorrect information.
 
 Patient search results may be incomplete.
 For example, a Provider may hold information on a matching patient, but not include the information in the search results due to security
-  constraints or information sharing rules
+constraints or information sharing rules.
 If the Consumer assumes that the Provider holds no information related to the patient it is possible that clinical 
 decisions will be taken using incorrect information.
 

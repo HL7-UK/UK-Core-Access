@@ -3,7 +3,8 @@ InstanceOf: Patient
 Description: "Example patient Richard Smith"
 * id = "57bae551-2c5d-4def-a541-4b156ec49497"
 * meta
-  * profile = Canonical(https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient)
+  * profile[+] = Canonical(https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient)
+  * profile[+] = Canonical(UKCoreAccessPatientIndexPatient)
 * identifier[+]
   * system = "https://fhir.nhs.uk/Id/nhs-number"
   * value = "9912003888"
@@ -29,7 +30,8 @@ InstanceOf: Patient
 Description: "Example patient Michael Smithies"
 * id = "9708ceae-ddc8-49d2-97c1-f6f161e0104a"
 * meta
-  * profile = Canonical(https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient)
+  * profile[+] = Canonical(https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient)
+  * profile[+] = Canonical(UKCoreAccessPatientIndexPatient)
 * identifier[+]
   * system = "https://fhir.nhs.uk/Id/nhs-number"
   * value = "9912003814"
@@ -52,7 +54,8 @@ InstanceOf: Patient
 Description: "Example patient MaryMorris"
 * id = "b88f0099-5213-4502-a49d-cc3887027bdd"
 * meta
-  * profile = Canonical(https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient)
+  * profile[+] = Canonical(https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient)
+  * profile[+] = Canonical(UKCoreAccessPatientIndexPatient)
 * identifier[+]
   * system = "https://fhir.nhs.uk/Id/nhs-number"
   * value = "4123456879"

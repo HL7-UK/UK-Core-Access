@@ -9,10 +9,14 @@ implementation guide when implementing systems to allow authenticated and author
 ### Actors
 The following Actors participate in the interactions described in this implementation guide:
 
-| Actors | Role                                                                                                                        |
-|--------|-----------------------------------------------------------------------------------------------------------------------------|
-| Provider | Instantiates a FHIR RESTful API providing the UKCore Access [capabilities](./CapabilityStatement-UKCoreAccessProvider.html) |
-| Consumer | Requests information from one or more Providers                                                                             |
+| Actors                 | Role                                                                                                                                                           |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Patient Index Provider | Instantiates a FHIR RESTful API endpoint providing the UKCore Access Patient Index [capabilities](./CapabilityStatement-UKCoreAccessPatientIndexProvider.html) |
+| Clinical Data Provider | Instantiates a FHIR RESTful API endpoint providing the UKCore Access Clinical Data [capabilities](./CapabilityStatement-UKCoreAccessClinicalDataProvider.html) |
+| Consumer               | Requests information from one or more Providers                                                                                                                |
+
+A FHIR RESTful API endpoint may provide the capabilities of one or more Actors, provided that it satisfies the requirements for each Actor.
+For example, an endpoint may be both a Patient Index Provider AND Clinical Data Provider.
 
 ### Locating a FHIR Server
 It is assumed that Consumers will discover the URLs of FHIR RESTful endpoints from sources including:

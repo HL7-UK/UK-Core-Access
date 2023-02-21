@@ -7,8 +7,8 @@ Title: "UKCore Access"
 * kind = #instance
 * fhirVersion = #4.0.1
 * format = #json
-* description = "An example of a Provider supporting UKCore Access requirements."
-* instantiates = Canonical(UKCoreAccessProvider)
+* description = "An example of a Provider supporting UKCore Access Patient Index Provider requirements."
+* instantiates = Canonical(UKCoreAccessPatientIndexProvider)
 * implementation
   * description = "FHIR Server providing access to information controlled by Provider"
   * url = "https://fhir.example-provider.nhs.uk/"

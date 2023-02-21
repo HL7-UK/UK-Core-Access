@@ -1,4 +1,5 @@
-### capabilities
+### Actors
+#### Provider (All)
 The Provider SHALL support the [capabilities](https://hl7.org/fhir/R4/http.html#capabilities) interaction so that
 a Consumer can retrieve a [CapabilityStatement](https://hl7.org/fhir/R4/capabilitystatement.html) resource of type
 `instance` that specifies which resource types and interactions are supported by the FHIR endpoint:
@@ -12,6 +13,7 @@ The Provider MAY provide further capabilities at this FHIR endpoint, in addition
 For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/metadata`
 the Provider would respond with a CapabilityStatement resource. [[Example](CapabilityStatement-UKCoreAccessProvider-instance.html)]
 
+#### Consuler
 A Consumer MAY use the CapabilityStatement during implementation to discover the capabilities of a FHIR endpoint provided by a UKCore Access Provider.
 
 A Consumer MAY retrieve the CapabilityStatement at runtime to discover the current capabilities of a FHIR endpoint and 
