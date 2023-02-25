@@ -5,6 +5,6 @@ Description: "UK Core Access Patient resource profile for patient index lookup, 
 * ^status = #active
 * name 1..* MS
 * gender 1..1 MS
-* birthDate 1..1 MS
-* identifier 1..* MS
+* birthDate 0..1 MS
+* address 0..1 MS
 
