@@ -17,6 +17,7 @@ error Structure Definition https://fhir.hl7.org.uk/StructureDefinition/UKCore-Pa
   Line: 1 - 2
 */
 * name 1..* MS
+* gender 1..1 MS
 * birthDate 1..1 MS
 * identifier 1..* MS
 
