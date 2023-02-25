@@ -16,8 +16,11 @@ error Structure Definition https://fhir.hl7.org.uk/StructureDefinition/UKCore-Pa
   File: /Users/Dunmail/Documents/Development/UK-Core-Access/input/fsh/profiles/PatientIndexPatient.fsh
   Line: 1 - 2
 */
+* identifier 1..* MS
+* identifier.system 1..1 MS
+* identifier.value 1..1 MS
 * name 1..* MS
 * gender 1..1 MS
-* birthDate 1..1 MS
-* identifier 1..* MS
+* birthDate 0..1 MS
+* address 0..1 MS
 
