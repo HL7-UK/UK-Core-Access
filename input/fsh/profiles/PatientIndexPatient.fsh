@@ -1,12 +1,8 @@
 Profile: UKCoreAccessPatientIndexPatient
-//Parent: Patient
 Parent: UKCore-Patient
-
 Id: UKCoreAccessPatientIndexPatient
-
 Description: "UK Core Access Patient resource profile for patient index lookup, supporting basic data for identification"
 * ^status = #active
-
 * identifier 1..* MS
 * identifier.system 1..1 MS
 * identifier.value 1..1 MS
