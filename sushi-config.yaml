@@ -74,6 +74,7 @@ menu:
   Capabilities:
     Server Metadata: server_metadata.html
     Patient Search: patient_search.html
+    Clinical Data: clinical_data.html
     Exception Handling: exception_handling.html
   Safety and Security: safety_and_security.html
   Artifacts: artifacts.html
