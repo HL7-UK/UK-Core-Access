@@ -13,12 +13,19 @@ using incomplete information.
 If a Consumer uses the `_count` parameter to request large pages of information it is possible that very many resources
 are returned such that the capacity of the system is overwhelmed.
 
-#### Patient search
+#### Operation outcomes within search requests
+Providers may choose to return informational and warning messages from search results within an [OperationOutcome resource
+in the response](https://hl7.org/fhir/R4/http.html#search).
+If a Consumer fails to process the OperationOutcome it is possible that clinical decisions will be taken
+without considering the relevant information and/or warnings.
+
+#### Patient search results are counterintuitive
 Patient search results may include counterintuitive results.
 For example, a Provider may return more than one matched patient, even where a highly specific search is used (_e.g._ NHS Number).
 If the Consumer fails to select the correct patient from within the returned Patient resources it is possible that 
 clinical decisions will be taken using incorrect information.
 
+#### Patient search results are incomplete
 Patient search results may be incomplete.
 For example, a Provider may hold information on a matching patient, but not include the information in the search results due to security
 constraints or information sharing rules.
