@@ -6,15 +6,15 @@ matching the search criteria and conforming to the [UKCoreAccess PatientIndexPat
 
 A Patient Index Provider supports at least the following search parameters:
 
-| Conformance | Parameter                             | Type                                                 | Description                                                                                                                            |
-|-------------|---------------------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| SHOULD      | [_id](patient_search.html#_id)        | [token](https://hl7.org/fhir/R4/search.html#token)   |                                                                                                                                        |
+| Conformance | Parameter                                    | Type                                                 | Description                                                                                                                            |
+|-------------|----------------------------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| SHOULD      | [_id](patient_search.html#_id)               | [token](https://hl7.org/fhir/R4/search.html#token)   |                                                                                                                                        |
 | SHALL       | [identifier](patient_search.html#identifier) | [token](https://hl7.org/fhir/R4/search.html#token)   | A patient identifier                                                                                                            |
-| SHOULD      | [family](patient_search.html#family)  | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the family name of the patient                                                                                            |
-| SHOULD      | [given](patient_search.html#given)    | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the given name of the patient                                                                                             |
-| SHOULD      | [name](patient_search.html#name)      | [string](https://hl7.org/fhir/R4/search.html#string) | A server defined search that may match any of the string fields in the HumanName, including family, given, prefix, suffix, and/or text |
-| SHOULD      | [gender](patient_search.html#gender)  | [token](https://hl7.org/fhir/R4/search.html#token)   | Gender of the patient                                                                                                                  |
-| SHOULD      | [birthdate](patient_search.html#identifier) | [date](https://hl7.org/fhir/R4/search.html#date)     | The patient's date of birth                                                                                                      |
+| SHOULD      | [family](patient_search.html#family)         | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the family name of the patient                                                                                            |
+| SHOULD      | [given](patient_search.html#given)           | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the given name of the patient                                                                                             |
+| SHOULD      | [name](patient_search.html#name)             | [string](https://hl7.org/fhir/R4/search.html#string) | A server defined search that may match any of the string fields in the HumanName, including family, given, prefix, suffix, and/or text |
+| SHOULD      | [gender](patient_search.html#gender)         | [token](https://hl7.org/fhir/R4/search.html#token)   | Gender of the patient                                                                                                                  |
+| SHOULD      | [birthdate](patient_search.html#birthdate)   | [date](https://hl7.org/fhir/R4/search.html#date)     | The patient's date of birth                                                                                                      |
 
 A Patient Index Provider supports at least the following search parameter combinations:
 
