@@ -73,7 +73,7 @@ menu:
   Home: index.html
   Capabilities:
     Server Metadata: server_metadata.html
-    Patient Search: patient_search.html
+    Patient Index: patient_index.html
     Clinical Data: clinical_data.html
     Exception Handling: exception_handling.html
   Safety and Security: safety_and_security.html

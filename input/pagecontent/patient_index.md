@@ -1,20 +1,32 @@
-### Actors
-#### Patient Index Provider
+### capabilities
+A Patient Index Provider SHALL support the [capabilities](https://hl7.org/fhir/R4/http.html#capabilities) interaction so that
+a Consumer can retrieve a [CapabilityStatement](https://hl7.org/fhir/R4/capabilitystatement.html) resource of type
+`instance` that specifies which resource types and interactions are supported by the FHIR endpoint:
+```
+GET [base]/metadata
+```
+The CapabilityStatement SHALL be conformant with this implementation guide and SHOULD state that the FHIR endpoint instantiates the UKCore Access Patient Index [capabilities](./CapabilityStatement-UKCoreAccessPatientIndexProvider.html).
+The Provider MAY provide further capabilities at this FHIR endpoint, in addition to those required by a Patient Index Provider.
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/metadata`
+the Provider would respond with a CapabilityStatement resource. [[Example](CapabilityStatement-UKCoreAccessProvider-instance.html)]
+
+### Patient search
 A Patient Index Provider SHALL support the [search](https://hl7.org/fhir/R4/http.html#search) interaction on the 
 [Patient](https://hl7.org/fhir/R4/patient.html) resource so that a Consumer can retrieve a set of Patient resources
 matching the search criteria and conforming to the [UKCoreAccess PatientIndexPatient](StructureDefinition-UKCoreAccessPatientIndexPatient.html) profile.
 
 A Patient Index Provider supports at least the following search parameters:
 
-| Conformance | Parameter                                    | Type                                                 | Description                                                                                                                            |
-|-------------|----------------------------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| SHOULD      | [_id](patient_search.html#_id)               | [token](https://hl7.org/fhir/R4/search.html#token)   |                                                                                                                                        |
-| SHALL       | [identifier](patient_search.html#identifier) | [token](https://hl7.org/fhir/R4/search.html#token)   | A patient identifier                                                                                                            |
-| SHOULD      | [family](patient_search.html#family)         | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the family name of the patient                                                                                            |
-| SHOULD      | [given](patient_search.html#given)           | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the given name of the patient                                                                                             |
-| SHOULD      | [name](patient_search.html#name)             | [string](https://hl7.org/fhir/R4/search.html#string) | A server defined search that may match any of the string fields in the HumanName, including family, given, prefix, suffix, and/or text |
-| SHOULD      | [gender](patient_search.html#gender)         | [token](https://hl7.org/fhir/R4/search.html#token)   | Gender of the patient                                                                                                                  |
-| SHOULD      | [birthdate](patient_search.html#birthdate)   | [date](https://hl7.org/fhir/R4/search.html#date)     | The patient's date of birth                                                                                                      |
+| Conformance | Parameter                                            | Type                                                 | Description                                                                                                                            |
+|-------------|------------------------------------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| SHOULD      | [_id](patient_search.html#patient-_id)               | [token](https://hl7.org/fhir/R4/search.html#token)   |                                                                                                                                        |
+| SHALL       | [identifier](patient_search.html#patient-identifier) | [token](https://hl7.org/fhir/R4/search.html#token)   | A patient identifier                                                                                                            |
+| SHOULD      | [family](patient_search.html#patient-family)         | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the family name of the patient                                                                                            |
+| SHOULD      | [given](patient_search.html#patient-given)           | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the given name of the patient                                                                                             |
+| SHOULD      | [name](patient_search.html#patient-name)             | [string](https://hl7.org/fhir/R4/search.html#string) | A server defined search that may match any of the string fields in the HumanName, including family, given, prefix, suffix, and/or text |
+| SHOULD      | [gender](patient_search.html#patient-gender)         | [token](https://hl7.org/fhir/R4/search.html#token)   | Gender of the patient                                                                                                                  |
+| SHOULD      | [birthdate](patient_search.html#patient-birthdate)   | [date](https://hl7.org/fhir/R4/search.html#date)     | The patient's date of birth                                                                                                      |
 
 A Patient Index Provider supports at least the following search parameter combinations:
 
@@ -25,24 +37,8 @@ A Patient Index Provider supports at least the following search parameter combin
 | SHOULD       | gender+family    | `GET [base]/Patient?gender=[gender]&family=[name]`  |
 | SHOULD       | gender+name      | `GET [base]/Patient?gender=[gender]&name=[name]`    |
 
-#### Clinical Data Provider
-A Clinical Data Provider SHALL support the [search](https://hl7.org/fhir/R4/http.html#search) interaction on the
-[Patient](https://hl7.org/fhir/R4/patient.html) resource so that a Consumer can retrieve a set of Patient resources
-matching the search criteria and conforming to the [UKCore Patient](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-Patient?version=1.0.0) profile.
-
-A Clinical Data Provider supports at least the following search parameters:
-
-| Conformance | Parameter                                    | Type                                                 | Description            |
-|-------------|----------------------------------------------|------------------------------------------------------|------------------------|
-| SHOULD      | [_id](patient_search.html#_id)               | [token](https://hl7.org/fhir/R4/search.html#token)   |                        |
-| SHALL       | [identifier](patient_search.html#identifier) | [token](https://hl7.org/fhir/R4/search.html#token)   | A patient identifier   |
-
-#### Consumer
-The Consumer SHALL handle search results where the Provider returns results as a series of [pages](https://hl7.org/fhir/R4/search.html#count).
-
-### Parameters
-#### _id
-The Provider may support search by the logical identifier of the Patient resource:
+#### Patient _id
+The Provider SHOULD support search by the logical identifier of the Patient resource:
 ```
 GET [base]/Patient?_id=[id]
 ```
@@ -50,8 +46,8 @@ GET [base]/Patient?_id=[id]
 For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?_id=b88f0099-5213-4502-a49d-cc3887027bdd`
 the Provider would respond with a Bundle containing Patient resources with id `b88f0099-5213-4502-a49d-cc3887027bdd`. [[Example](Bundle-Response-patientsearchbyid.html)]
 
-#### identifier
-The Provider may support search by identifier:
+#### Patient identifier
+The Provider SHALL support search by identifier:
 ```
 GET [base]/Patient?identifier=[system]|[value]
 ```
@@ -60,7 +56,7 @@ GET [base]/Patient?identifier=[system]|[value]
 The national identifier within England, Wales and the Isle of Man is the [NHS Number](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/isb-0149-nhs-number)
 which uses the identifier system `https://fhir.nhs.uk/Id/nhs-number`.
 
-The Provider may support search by NHS Number:
+The Provider MAY support search by NHS Number:
 ```
 GET [base]/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|[NHS Number]
 ```
@@ -72,7 +68,7 @@ the Provider would respond with a Bundle containing Patient resources with NHS N
 The national identifier within Scotland is the [CHI Number](https://www.ndc.scot.nhs.uk/Dictionary-A-Z/Definitions/index.asp?ID=128)
 which uses the identifier system `https://fhir.nhs.uk/Id/chi-number`.
 
-The Provider may support search by CHI Number.
+The Provider MAY support search by CHI Number.
 
 > TODO: CHI Number system
 >
@@ -82,7 +78,7 @@ The Provider may support search by CHI Number.
 The national identifier within Northern Ireland is the [H&C Number](https://www.datadictionary.nhs.uk/attributes/health_and_care_number.html)
 which uses the identifier system `https://fhir.nhs.uk/Id/hc-number`.
 
-The Provider may support search by H&C Number.
+The Provider MAY support search by H&C Number.
 
 > TODO: H&C Number system
 >
@@ -114,8 +110,8 @@ GET [base]/Patient?identifier=[Identifier]
 For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?identifier=12345`
 the Provider would respond with a Bundle containing any Patient resources with identifier `12345` issued by any organisation. [[Example](Bundle-Response-patientsearchbyidentifiervalue.html)]
 
-#### family
-The Provider may support search by patient family name:
+#### Patient family
+The Provider SHOULD support search by patient family name:
 ```
 GET [base]/Patient?family=[name]
 ```
@@ -123,8 +119,8 @@ GET [base]/Patient?family=[name]
 For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?family=Smith`
 the Provider would respond with a Bundle containing Patient resources with family name starting with `Smith`. [[Example](Bundle-Response-patientsearchbyfamily.html)]
 
-#### given
-The Provider may support search by patient given name:
+#### Patient given
+The Provider SHOULD support search by patient given name:
 ```
 GET [base]/Patient?given=[name]
 ```
@@ -132,7 +128,7 @@ GET [base]/Patient?given=[name]
 For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?given=Rich`
 the Provider would respond with a Bundle containing Patient resources with given name starting with `Rich`. [[Example](Bundle-Response-patientsearchbygiven.html)]
 
-#### name
+#### Patient name
 The Provider SHOULD support search by patient name:
 ```
 GET [base]/Patient?name=[name]
@@ -141,8 +137,8 @@ GET [base]/Patient?name=[name]
 For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?name=Rich`
 the Provider would respond with a Bundle containing Patient resources where part of the name starts with `Rich`. [[Example](Bundle-Response-patientsearchbyname.html)]
 
-#### gender
-A Provider may support search by patient gender:
+#### Patient gender
+A Provider SHOULD support search by patient gender:
 ```
 GET [base]/Patient?gender=[code]
 ```
@@ -150,8 +146,8 @@ GET [base]/Patient?gender=[code]
 For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/Patient?gender=female`
 the Provider would respond with a Bundle containing Patient resources with gender `female`. [[Example](Bundle-Response-patientsearchbygender.html)]
 
-#### birthdate
-The Provider may support search by patient birthdate:
+#### Patient birthdate
+The Provider SHOULD support search by patient birthdate:
 ```
 GET [base]/Patient?birthdate=[date]
 ```
