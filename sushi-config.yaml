@@ -72,12 +72,14 @@ dependencies:
 menu:
   Home: index.html
   Capabilities:
-    Server Metadata: server_metadata.html
     Patient Index: patient_index.html
     Clinical Data: clinical_data.html
+    Consumer: consumer.html
     Exception Handling: exception_handling.html
-  Safety and Security: safety_and_security.html
-  Artifacts: artifacts.html
+  Resources:
+    Artifacts: artifacts.html
+    Safety and Security: safety_and_security.html
+    Related Standards: related_standards.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

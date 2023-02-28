@@ -18,15 +18,15 @@ matching the search criteria and conforming to the [UKCoreAccess PatientIndexPat
 
 A Patient Index Provider supports at least the following search parameters:
 
-| Conformance | Parameter                                            | Type                                                 | Description                                                                                                                            |
-|-------------|------------------------------------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| SHOULD      | [_id](patient_search.html#patient-_id)               | [token](https://hl7.org/fhir/R4/search.html#token)   |                                                                                                                                        |
-| SHALL       | [identifier](patient_search.html#patient-identifier) | [token](https://hl7.org/fhir/R4/search.html#token)   | A patient identifier                                                                                                            |
-| SHOULD      | [family](patient_search.html#patient-family)         | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the family name of the patient                                                                                            |
-| SHOULD      | [given](patient_search.html#patient-given)           | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the given name of the patient                                                                                             |
-| SHOULD      | [name](patient_search.html#patient-name)             | [string](https://hl7.org/fhir/R4/search.html#string) | A server defined search that may match any of the string fields in the HumanName, including family, given, prefix, suffix, and/or text |
-| SHOULD      | [gender](patient_search.html#patient-gender)         | [token](https://hl7.org/fhir/R4/search.html#token)   | Gender of the patient                                                                                                                  |
-| SHOULD      | [birthdate](patient_search.html#patient-birthdate)   | [date](https://hl7.org/fhir/R4/search.html#date)     | The patient's date of birth                                                                                                      |
+| Conformance | Parameter                           | Type                                                 | Description                                                                                                                            |
+|-------------|-------------------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| SHOULD      | [_id](patient_index.html#patient-_id) | [token](https://hl7.org/fhir/R4/search.html#token)   |                                                                                                                                        |
+| SHALL       | [identifier](patient_index.html#patient-identifier) | [token](https://hl7.org/fhir/R4/search.html#token)   | A patient identifier                                                                                                            |
+| SHOULD      | [family](patient_index.html#patient-family) | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the family name of the patient                                                                                            |
+| SHOULD      | [given](patient_index.html#patient-given) | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the given name of the patient                                                                                             |
+| SHOULD      | [name](patient_index.html#patient-name) | [string](https://hl7.org/fhir/R4/search.html#string) | A server defined search that may match any of the string fields in the HumanName, including family, given, prefix, suffix, and/or text |
+| SHOULD      | [gender](patient_index.html#patient-gender) | [token](https://hl7.org/fhir/R4/search.html#token)   | Gender of the patient                                                                                                                  |
+| SHOULD      | [birthdate](patient_index.html#patient-birthdate) | [date](https://hl7.org/fhir/R4/search.html#date)     | The patient's date of birth                                                                                                      |
 
 A Patient Index Provider supports at least the following search parameter combinations:
 
@@ -160,20 +160,4 @@ Where a Provider supports search by patient birthdate, the Provider SHOULD suppo
 - the `eq`, `ge`, `le` operators *e.g.* `birthdate=ge1970-09-01`
 - multiple date parameters *e.g.* `birthdate=ge1970-09-01&birthdate=le1970-10-01`
 
-### Related standards
-The Patient search capability in the UKCore Access implementation guide is closely related to patient search
-defined in international interoperability standards including:
-- [IHE Patient Demographics Query for Mobile](https://profiles.ihe.net/ITI/PDQm/index.html)
-- [HL7 International Patient Access](https://build.fhir.org/ig/HL7/fhir-ipa/index.html)
-
-Servers are required to support Patient search parameters as follows: 
-
-| Parameter  | Patient Index Provider | Clinical Data Provider | IPA    | PDQm  |
-|------------|------------------------|------------------------|--------|-------|
-| _id        | SHOULD                 | SHOULD                 | SHOULD | SHALL | 
-| identifier | SHALL                  | SHALL                  | SHOULD | SHALL | 
-| family     | SHOULD                 | MAY                    | SHOULD | SHALL | 
-| given      | SHOULD                 | MAY                    | SHOULD | SHALL | 
-| name       | SHOULD                 | MAY                    | SHOULD | SHALL |
-| gender     | SHOULD                 | MAY                    | SHOULD | SHALL | 
-| birthdate  | SHOULD                 | MAY                    | SHOULD | SHALL | 
+ 
