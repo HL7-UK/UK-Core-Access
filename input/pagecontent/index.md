@@ -1,7 +1,13 @@
 # UKCore Access
 This HL7 FHIR Implementation Guide specifies the requirements for a RESTful endpoint providing read-only access for direct care
 and subject of care access within the UK. It uses UK-specific resource profiles defined in the
-[UK Core 1.0.0](https://simplifier.net/guide/uk-core-implementation-guide/Home?version=1.0.0) implementation guide.
+[UK Core 1.0.0](https://simplifier.net/guide/uk-core-implementation-guide/Home?version=1.0.0) implementation guide and 
+provides implementers with a mechanism to share information that conforms to the UK Core profiles.
+
+Users of this Implementation Guide will not directly meet existing international standards that provide similar 
+capabilities such as HL7 IPA, IHE PDQm and IHE QEDm. 
+However, it has been designed to provide many [common capabilities](./related_standards.html)
+so that it is largely compatible.
 
 Data Controllers holding personal data related to health and care may provide the capabilities specified in this
 implementation guide when implementing systems to allow authenticated and authorised consumers to access the data.
