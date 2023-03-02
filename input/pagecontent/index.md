@@ -48,6 +48,6 @@ This project is supported by [HL7 UK](https://www.hl7.org.uk/) with contribution
 - Mark Frayne ([DHCW](https://dhcw.nhs.wales/))
 - Dunmail Hodkinson ([Black Pear Software](https://blackpear.com))
 - Richard Kavanagh ([Kainos](https://kainos.com))
-- Omar Khan ([NHS Digital](https://digital.nhs.uk))
+- Omar Khan ([NHS England](https://www.england.nhs.uk))
 - Ben McAlister ([Oracle](https://oracle.com))
 - Rik Smithies ([NProgram](http://nprogram.co.uk))
