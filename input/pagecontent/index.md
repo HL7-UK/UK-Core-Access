@@ -12,11 +12,11 @@ APIs shouldn't be used in other domains where different terms for the subject of
 ### Actors
 The following Actors participate in the interactions described in this implementation guide:
 
-| Actors                                         | Role                                                                                                                                                           |
-|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Patient Index](./patient_index.html) Provider | Instantiates a FHIR RESTful API endpoint providing the UKCore Access Patient Index [capabilities](./CapabilityStatement-UKCoreAccessPatientIndexProvider.html) |
-| [Clinical Data](./clinical_data.html) Provider | Instantiates a FHIR RESTful API endpoint providing the UKCore Access Clinical Data [capabilities](./CapabilityStatement-UKCoreAccessClinicalDataProvider.html) |
-| [Consumer](./consumer.html)                    | Requests information from one or more Providers                                                                                                                |
+| Actors                                          | Role                                                                                                                                                           |
+|:------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Patient Index Provider](./patient_index.html)  | Instantiates a FHIR RESTful API endpoint providing the UKCore Access Patient Index [capabilities](./CapabilityStatement-UKCoreAccessPatientIndexProvider.html) |
+| [Clinical Data Provider](./clinical_data.html)  | Instantiates a FHIR RESTful API endpoint providing the UKCore Access Clinical Data [capabilities](./CapabilityStatement-UKCoreAccessClinicalDataProvider.html) |
+| [Consumer](./consumer.html)                     | Requests information from one or more Providers                                                                                                                |
 
 A FHIR RESTful API endpoint may provide the capabilities of one or more Actors, provided that it satisfies the requirements for each Actor.
 For example, an endpoint may be both a Patient Index Provider AND Clinical Data Provider.
@@ -43,4 +43,5 @@ This project is supported by [HL7 UK](https://www.hl7.org.uk/) with contribution
 - Dunmail Hodkinson ([Black Pear Software](https://blackpear.com))
 - Richard Kavanagh ([Kainos](https://kainos.com))
 - Omar Khan ([NHS Digital](https://digital.nhs.uk))
+- Ben McAlister ([Oracle](https://oracle.com))
 - Rik Smithies ([NProgram](http://nprogram.co.uk))
