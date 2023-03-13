@@ -1,7 +1,7 @@
 ### Safety
 Providers and Consumers SHOULD adopt the recommendations in the FHIR [Implementer's Safety Check List](https://www.hl7.org/fhir/safety.html).
 
-Providers and Consumers SHOULD adopt [NHS Clinical risk management standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards) where applicable to their use case.
+Providers and Consumers SHOULD adopt [NHS Clinical risk management standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards) where applicable to their use case  and locality.
 
 Providers and Consumers  MAY consider the following potential hazards that have been identified during development of the
 implementation guide:
@@ -35,7 +35,7 @@ decisions will be taken using incorrect information.
 ### Security
 Providers and Consumers SHOULD adopt the recommendations in [FHIR Security and Privacy](https://www.hl7.org/fhir/secpriv-module.html) guide.
 
-Providers and Consumers SHOULD adopt [NHS Data security and information governance](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance) guidance where applicable to their use case.
+Providers and Consumers SHOULD adopt [NHS Data security and information governance](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance) guidance where applicable to their use case and locality.
 
 The Provider SHOULD add CORS headers so that a Consumer can make requests from within a browser.
 

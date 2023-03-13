@@ -12,8 +12,8 @@ so that it is largely compatible.
 Data Controllers holding personal data related to health and care may provide the capabilities specified in this
 implementation guide when implementing systems to allow authenticated and authorised consumers to access the data.
 The implementation guide is intended to be compatible with **all** systems used to manage care provision. Language
-specific to the health domain, such as 'Patient', is used for technical reasons but there is no reason that these
-APIs shouldn't be used in other domains where different terms for the subject of care may be normally used.
+specific to the health domain, such as 'Patient', is used for technical clarity but there is no reason that these
+APIs should not be used in other domains where different terms for the subject of care are used.
 
 ### Actors
 The following Actors participate in the interactions described in this implementation guide:
