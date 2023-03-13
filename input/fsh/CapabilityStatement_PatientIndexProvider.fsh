@@ -15,10 +15,10 @@ Title: "UKCore Access Patient Index Provider"
 * insert InteractionWithExpectation(#search-type, #SHALL)
 * insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(family, #string, #SHOULD)
-* insert SearchParamWithExpectation(gender, #token, #SHOULD)
+* insert SearchParamWithExpectation(gender, #token, #SHALL)
 * insert SearchParamWithExpectation(given, #string, #SHOULD)
 * insert SearchParamWithExpectation(identifier, #token, #SHALL)
-* insert SearchParamWithExpectation(name, #string, #SHOULD)
+* insert SearchParamWithExpectation(name, #string, #SHALL)
 
 * insert SearchParamCombinationWithExpectation(#SHOULD)
 * insert RequiringSearchParam(birthdate)

@@ -13,11 +13,13 @@ Title: "UKCore Access Clinical Data Provider"
 //Patient
 * insert ResourceWithExpectation(#Patient, https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient, #SHALL)
 * insert InteractionWithExpectation(#search-type, #SHALL)
+* insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(identifier, #token, #SHALL)
 
 //AllergyIntolerance
 * insert ResourceWithExpectation(#AllergyIntolerance, https://fhir.hl7.org.uk/StructureDefinition/UKCore-AllergyIntolerance, #SHOULD)
 * insert InteractionWithExpectation(#search-type, #SHALL)
+* insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(patient, #token, #SHALL)
 * insert SearchParamWithExpectation(clinical-status, #token, #SHOULD)
 * insert SearchParamWithExpectation(date, #date, #SHOULD)
@@ -38,9 +40,10 @@ Title: "UKCore Access Clinical Data Provider"
 //Immunization
 * insert ResourceWithExpectation(#Immunization, https://fhir.hl7.org.uk/StructureDefinition/UKCore-Immunization, #SHOULD)
 * insert InteractionWithExpectation(#search-type, #SHALL)
+* insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(patient, #token, #SHALL)
 * insert SearchParamWithExpectation(date, #date, #SHOULD)
-* insert SearchParamWithExpectation(status, #token, #SHOULD)
+* insert SearchParamWithExpectation(status, #token, #SHALL)
 
 * insert SearchParamCombinationWithExpectation(#SHOULD)
 * insert RequiringSearchParam(patient)
@@ -53,9 +56,10 @@ Title: "UKCore Access Clinical Data Provider"
 //MedicationStatement
 * insert ResourceWithExpectation(#MedicationStatement, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationStatement, #SHOULD)
 * insert InteractionWithExpectation(#search-type, #SHALL)
+* insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(patient, #token, #SHALL)
 * insert SearchParamWithExpectation(effective, #date, #SHOULD)
-* insert SearchParamWithExpectation(status, #token, #SHOULD)
+* insert SearchParamWithExpectation(status, #token, #SHALL)
 
 * insert SearchParamCombinationWithExpectation(#SHOULD)
 * insert RequiringSearchParam(patient)

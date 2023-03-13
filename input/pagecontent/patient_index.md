@@ -24,8 +24,8 @@ A Patient Index Provider supports at least the following search parameters:
 | SHALL       | [identifier](patient_index.html#patient-identifier) | [token](https://hl7.org/fhir/R4/search.html#token)   | A patient identifier                                                                                                            |
 | SHOULD      | [family](patient_index.html#patient-family) | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the family name of the patient                                                                                            |
 | SHOULD      | [given](patient_index.html#patient-given) | [string](https://hl7.org/fhir/R4/search.html#string) | A portion of the given name of the patient                                                                                             |
-| SHOULD      | [name](patient_index.html#patient-name) | [string](https://hl7.org/fhir/R4/search.html#string) | A server defined search that may match any of the string fields in the HumanName, including family, given, prefix, suffix, and/or text |
-| SHOULD      | [gender](patient_index.html#patient-gender) | [token](https://hl7.org/fhir/R4/search.html#token)   | Gender of the patient                                                                                                                  |
+| SHALL       | [name](patient_index.html#patient-name) | [string](https://hl7.org/fhir/R4/search.html#string) | A server defined search that may match any of the string fields in the HumanName, including family, given, prefix, suffix, and/or text |
+| SHALL       | [gender](patient_index.html#patient-gender) | [token](https://hl7.org/fhir/R4/search.html#token)   | Gender of the patient                                                                                                                  |
 | SHOULD      | [birthdate](patient_index.html#patient-birthdate) | [date](https://hl7.org/fhir/R4/search.html#date)     | The patient's date of birth                                                                                                      |
 
 A Patient Index Provider supports at least the following search parameter combinations:
@@ -129,7 +129,7 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing Patient resources with given name starting with `Rich`. [[Example](Bundle-Response-patientsearchbygiven.html)]
 
 #### Patient name
-The Provider SHOULD support search by patient name:
+The Provider SHALL support search by patient name:
 ```
 GET [base]/Patient?name=[name]
 ```
@@ -138,7 +138,7 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing Patient resources where part of the name starts with `Rich`. [[Example](Bundle-Response-patientsearchbyname.html)]
 
 #### Patient gender
-A Provider SHOULD support search by patient gender:
+A Provider SHALL support search by patient gender:
 ```
 GET [base]/Patient?gender=[code]
 ```

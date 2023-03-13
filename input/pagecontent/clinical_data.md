@@ -37,6 +37,7 @@ A Clinical Data Provider supports at least the following search parameters:
 
 | Conformance | Parameter                                                                | Type                                                       | Description                                              |
 |-------------|--------------------------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------|
+| SHOULD      | [_id](clinical_data.html#allergyintolerance-_id)                         | [token](https://hl7.org/fhir/R4/search.html#token)         |                                                          |
 | SHALL       | [patient](clinical_data.html#allergyintolerance-patient)                 | [reference](https://hl7.org/fhir/R4/search.html#reference) | Who the sensitivity is for                               |
 | SHOULD      | [clinical-status](clinical_data.html#allergyintolerance-clinical-status) | [token](https://hl7.org/fhir/R4/search.html#token)         | active, inactive or resolved                             |
 | SHOULD      | [date](clinical_data.html#allergyintolerance-date)                       | [date](https://hl7.org/fhir/R4/search.html#date)           | Date first version of the resource instance was recorded |
@@ -49,6 +50,12 @@ A Clinical Data Provider supports at least the following search parameter combin
 | SHOULD       | patient+date            | `GET [base]/AllergyIntolerance?patient=[id]&date=[date]`              |
 | SHOULD       | patient+last-date       | `GET [base]/AllergyIntolerance?patient=[id]&last-date=[date]`         |
 | SHOULD       | patient+clinical-status | `GET [base]/AllergyIntolerance?patient=[id]&clinical-status=[status]` |
+
+#### AllergyIntolerance _id
+The Provider SHOULD support search by the logical identifier of the AllergyIntolerance resource:
+```
+GET [base]/AllergyIntolerance?_id=[id]
+```
 
 #### AllergyIntolerance patient
 The Provider SHALL support search by patient:
@@ -101,11 +108,12 @@ set of Immunization resources matching the search criteria and conforming to the
 
 A Clinical Data Provider supports at least the following search parameters:
 
-| Conformance | Parameter                                                            | Type                                                       | Description                                              |
-|-------------|----------------------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------|
-| SHALL       | [patient](clinical_data.html#immunization-patient)                   | [reference](https://hl7.org/fhir/R4/search.html#reference) | The patient for the vaccination record                   |
-| SHOULD      | [status](clinical_data.html#immunization-status)                     | [token](https://hl7.org/fhir/R4/search.html#token)         | completed, entered-in-error, or not-done                 |
-| SHOULD      | [date](clinical_data.html#immunization-date)                         | [date](https://hl7.org/fhir/R4/search.html#date)           | Vaccination (non)-Administration Date                    |
+| Conformance | Parameter                                                         | Type                                                       | Description                              |
+|-------------|-------------------------------------------------------------------|------------------------------------------------------------|------------------------------------------|
+| SHOULD      | [_id](clinical_data.html#immunization-_id)                        | [token](https://hl7.org/fhir/R4/search.html#token)         |                                          |
+| SHALL       | [patient](clinical_data.html#immunization-patient)                | [reference](https://hl7.org/fhir/R4/search.html#reference) | The patient for the vaccination record   |
+| SHOULD      | [status](clinical_data.html#immunization-status)                  | [token](https://hl7.org/fhir/R4/search.html#token)         | completed, entered-in-error, or not-done |
+| SHOULD      | [date](clinical_data.html#immunization-date)                      | [date](https://hl7.org/fhir/R4/search.html#date)           | Vaccination (non)-Administration Date    |
 
 A Clinical Data Provider supports at least the following search parameter combinations:
 
@@ -113,6 +121,12 @@ A Clinical Data Provider supports at least the following search parameter combin
 |--------------|------------------|-------------------------------------------------------------------------|
 | SHOULD       | patient+date     | `GET [base]/Immunization?patient=[id]&date=[date]`                      |
 | SHOULD       | patient+status   | `GET [base]/Immunization?patient=[id]&status=[status]`                  |
+
+#### Immunization _id
+The Provider SHOULD support search by the logical identifier of the Immunization resource:
+```
+GET [base]/Immunization?_id=[id]
+```
 
 #### Immunization patient
 The Provider SHALL support search by patient:
@@ -155,6 +169,7 @@ A Clinical Data Provider supports at least the following search parameters:
 
 | Conformance | Parameter                                                     | Type                                                       | Description                                                 |
 |-------------|---------------------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------------|
+| SHOULD      | [_id](clinical_data.html#medicationstatement-_id)             | [token](https://hl7.org/fhir/R4/search.html#token)         |                                                             |
 | SHALL       | [patient](clinical_data.html#medicationstatement-patient)     | [reference](https://hl7.org/fhir/R4/search.html#reference) | Returns statements for a specific patient.                  |
 | SHOULD      | [status](clinical_data.html#medicationstatement-status)       | [token](https://hl7.org/fhir/R4/search.html#token)         | Return statements that match the given status               |
 | SHOULD      | [effective](clinical_data.html#medicationstatement-effective) | [date](https://hl7.org/fhir/R4/search.html#date)           | Date when patient was taking (or not taking) the medication |
@@ -165,6 +180,12 @@ A Clinical Data Provider supports at least the following search parameter combin
 |--------------|-------------------|----------------------------------------------------------------|
 | SHOULD       | patient+status    | `GET [base]/MedicationStatement?patient=[id]&status=[status]`  |
 | SHOULD       | patient+effective | `GET [base]/MedicationStatement?patient=[id]&effective=[date]` |
+
+#### MedicationStatement _id
+The Provider SHOULD support search by the logical identifier of the MedicationStatement resource:
+```
+GET [base]/MedicationStatement?_id=[id]
+```
 
 #### MedicationStatement patient
 The Provider SHALL support search by patient:
