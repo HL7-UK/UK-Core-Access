@@ -39,7 +39,7 @@ A Clinical Data Provider supports at least the following search parameters:
 |-------------|--------------------------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------|
 | SHOULD      | [_id](clinical_data.html#allergyintolerance-_id)                         | [token](https://hl7.org/fhir/R4/search.html#token)         |                                                          |
 | SHALL       | [patient](clinical_data.html#allergyintolerance-patient)                 | [reference](https://hl7.org/fhir/R4/search.html#reference) | Who the sensitivity is for                               |
-| SHOULD      | [clinical-status](clinical_data.html#allergyintolerance-clinical-status) | [token](https://hl7.org/fhir/R4/search.html#token)         | active, inactive or resolved                             |
+| SHALL       | [clinical-status](clinical_data.html#allergyintolerance-clinical-status) | [token](https://hl7.org/fhir/R4/search.html#token)         | active, inactive or resolved                             |
 | SHOULD      | [date](clinical_data.html#allergyintolerance-date)                       | [date](https://hl7.org/fhir/R4/search.html#date)           | Date first version of the resource instance was recorded |
 | SHOULD      | [last-date](clinical_data.html#allergyintolerance-last-date)             | [date](https://hl7.org/fhir/R4/search.html#date)           | Date(/time) of last known occurrence of a reaction       |
 
@@ -112,7 +112,7 @@ A Clinical Data Provider supports at least the following search parameters:
 |-------------|-------------------------------------------------------------------|------------------------------------------------------------|------------------------------------------|
 | SHOULD      | [_id](clinical_data.html#immunization-_id)                        | [token](https://hl7.org/fhir/R4/search.html#token)         |                                          |
 | SHALL       | [patient](clinical_data.html#immunization-patient)                | [reference](https://hl7.org/fhir/R4/search.html#reference) | The patient for the vaccination record   |
-| SHOULD      | [status](clinical_data.html#immunization-status)                  | [token](https://hl7.org/fhir/R4/search.html#token)         | completed, entered-in-error, or not-done |
+| SHALL       | [status](clinical_data.html#immunization-status)                  | [token](https://hl7.org/fhir/R4/search.html#token)         | completed, entered-in-error, or not-done |
 | SHOULD      | [date](clinical_data.html#immunization-date)                      | [date](https://hl7.org/fhir/R4/search.html#date)           | Vaccination (non)-Administration Date    |
 
 A Clinical Data Provider supports at least the following search parameter combinations:
@@ -158,6 +158,67 @@ the Provider would respond with a Bundle containing Immunization resources admin
 Where a Provider supports search by date, the Provider SHOULD support partial dates, the `eq`, `ge`, `le` operators and
 multiple date parameters. See Patient Index [birthdate](patient_index.html#patient-birthdate) for details.
 
+### MedicationAdministration search
+Where the underlying system can reliably provide the information, a Clinical Data Provider SHOULD support the
+[search](https://hl7.org/fhir/R4/http.html#search) interaction on the
+[MedicationAdministration](https://hl7.org/fhir/R4/medicationadministration.html) resource so that a Consumer can retrieve a
+set of MedicationAdministration resources matching the search criteria and conforming to the
+[UKCore MedicationAdministration](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationAdministration?version=1.0.0) profile.
+
+A Clinical Data Provider supports at least the following search parameters:
+
+| Conformance | Parameter                                                                    | Type                                                       | Description                                                                                  |
+|-------------|------------------------------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| SHOULD      | [_id](clinical_data.html#medicationadministration-_id)                       | [token](https://hl7.org/fhir/R4/search.html#token)         |                                                                                              |
+| SHALL       | [patient](clinical_data.html#medicationadministration-patient)               | [reference](https://hl7.org/fhir/R4/search.html#reference) | The identity of a patient to list administrations for                                        |
+| SHALL       | [status](clinical_data.html#medicationadministration-status)                 | [token](https://hl7.org/fhir/R4/search.html#token)         | MedicationAdministration event status (for example one of active/paused/completed/nullified) |
+| SHOULD      | [effective-time](clinical_data.html#medicationadministration-effective-time) | [date](https://hl7.org/fhir/R4/search.html#date)           | Date administration happened (or did not happen)                                             |
+
+A Clinical Data Provider supports at least the following search parameter combinations:
+
+| Conformance  | Parameters             | Example                                                                  |
+|--------------|------------------------|--------------------------------------------------------------------------|
+| SHOULD       | patient+status         | `GET [base]/MedicationAdministration?patient=[id]&status=[status]`       |
+| SHOULD       | patient+effective-time | `GET [base]/MedicationAdministration?patient=[id]&effective-time=[date]` |
+
+#### MedicationAdministration _id
+The Provider SHOULD support search by the logical identifier of the MedicationAdministration resource:
+```
+GET [base]/MedicationAdministration?_id=[id]
+```
+
+#### MedicationAdministration patient
+The Provider SHALL support search by patient:
+```
+GET [base]/MedicationAdministration?patient=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationAdministration?patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing MedicationAdministration resources that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
+
+#### MedicationAdministration status
+The Provider SHOULD support search by status:
+```
+GET [base]/MedicationAdministration?status=[status]&patient=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationAdministration?status=completed&patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing MedicationAdministration resources that are completed and reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
+
+#### MedicationAdministration effective-time
+The Provider SHOULD support search by effective date and time:
+```
+GET [base]/MedicationAdministration?effective-time=[date]&patient=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationAdministration?effective-time=ge2018-01-01&patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing MedicationAdministration resources effective on or after `2018-01-01` that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
+
+Where a Provider supports search by date, the Provider SHOULD support partial dates, the `eq`, `ge`, `le` operators and
+multiple date parameters. See Patient Index [birthdate](patient_index.html#patient-birthdate) for details.
+
+
+
 ### MedicationStatement search
 Where the underlying system can reliably provide the information, a Clinical Data Provider SHOULD support the
 [search](https://hl7.org/fhir/R4/http.html#search) interaction on the
@@ -171,7 +232,7 @@ A Clinical Data Provider supports at least the following search parameters:
 |-------------|---------------------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------------|
 | SHOULD      | [_id](clinical_data.html#medicationstatement-_id)             | [token](https://hl7.org/fhir/R4/search.html#token)         |                                                             |
 | SHALL       | [patient](clinical_data.html#medicationstatement-patient)     | [reference](https://hl7.org/fhir/R4/search.html#reference) | Returns statements for a specific patient.                  |
-| SHOULD      | [status](clinical_data.html#medicationstatement-status)       | [token](https://hl7.org/fhir/R4/search.html#token)         | Return statements that match the given status               |
+| SHALL       | [status](clinical_data.html#medicationstatement-status)       | [token](https://hl7.org/fhir/R4/search.html#token)         | Return statements that match the given status               |
 | SHOULD      | [effective](clinical_data.html#medicationstatement-effective) | [date](https://hl7.org/fhir/R4/search.html#date)           | Date when patient was taking (or not taking) the medication |
 
 A Clinical Data Provider supports at least the following search parameter combinations:
@@ -211,7 +272,7 @@ The Provider SHOULD support search by effective date:
 GET [base]/MedicationStatement?effective=[date]&patient=[id]
 ```
 
-For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationStatement?date=ge2018-01-01&patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationStatement?effective=ge2018-01-01&patient=b88f0099-5213-4502-a49d-cc3887027bdd`
 the Provider would respond with a Bundle containing MedicationStatement resources effective on or after `2018-01-01` that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
 
 Where a Provider supports search by date, the Provider SHOULD support partial dates, the `eq`, `ge`, `le` operators and
