@@ -53,6 +53,54 @@ Title: "UKCore Access Clinical Data Provider"
 * insert RequiringSearchParam(patient)
 * insert RequiringSearchParam(date)
 
+//MedicationAdministration
+* insert ResourceWithExpectation(#MedicationStatement, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationAdministration, #SHOULD)
+* insert InteractionWithExpectation(#search-type, #SHALL)
+* insert SearchParamWithExpectation(_id, #token, #SHOULD)
+* insert SearchParamWithExpectation(patient, #token, #SHALL)
+* insert SearchParamWithExpectation(effective-time, #date, #SHALL)
+* insert SearchParamWithExpectation(status, #token, #SHALL)
+
+* insert SearchParamCombinationWithExpectation(#SHOULD)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(status)
+
+* insert SearchParamCombinationWithExpectation(#SHOULD)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(effective-time)
+
+//MedicationDispense
+* insert ResourceWithExpectation(#MedicationStatement, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationDispense, #SHOULD)
+* insert InteractionWithExpectation(#search-type, #SHALL)
+* insert SearchParamWithExpectation(_id, #token, #SHOULD)
+* insert SearchParamWithExpectation(patient, #token, #SHALL)
+* insert SearchParamWithExpectation(whenprepared, #date, #SHOULD)
+* insert SearchParamWithExpectation(status, #token, #SHALL)
+
+* insert SearchParamCombinationWithExpectation(#SHOULD)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(status)
+
+* insert SearchParamCombinationWithExpectation(#SHOULD)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(whenprepared)
+
+//MedicationRequest
+* insert ResourceWithExpectation(#MedicationStatement, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationDispense, #SHOULD)
+* insert InteractionWithExpectation(#search-type, #SHALL)
+* insert SearchParamWithExpectation(_id, #token, #SHOULD)
+* insert SearchParamWithExpectation(patient, #token, #SHALL)
+* insert SearchParamWithExpectation(authoredon, #date, #SHOULD)
+* insert SearchParamWithExpectation(status, #token, #SHALL)
+
+* insert SearchParamCombinationWithExpectation(#SHOULD)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(status)
+
+* insert SearchParamCombinationWithExpectation(#SHOULD)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(authoredon)
+
 //MedicationStatement
 * insert ResourceWithExpectation(#MedicationStatement, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationStatement, #SHOULD)
 * insert InteractionWithExpectation(#search-type, #SHALL)
