@@ -217,7 +217,123 @@ the Provider would respond with a Bundle containing MedicationAdministration res
 Where a Provider supports search by date, the Provider SHOULD support partial dates, the `eq`, `ge`, `le` operators and
 multiple date parameters. See Patient Index [birthdate](patient_index.html#patient-birthdate) for details.
 
+### MedicationDispense search
+Where the underlying system can reliably provide the information, a Clinical Data Provider SHOULD support the
+[search](https://hl7.org/fhir/R4/http.html#search) interaction on the
+[MedicationDispense](https://hl7.org/fhir/R4/medicationdispense.html) resource so that a Consumer can retrieve a
+set of MedicationDispense resources matching the search criteria and conforming to the
+[UKCore MedicationDispense](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationDispense?version=1.0.0) profile.
 
+A Clinical Data Provider supports at least the following search parameters:
+
+| Conformance | Parameter                                                          | Type                                                       | Description                                        |
+|-------------|--------------------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------|
+| SHOULD      | [_id](clinical_data.html#medicationdispense-_id)                   | [token](https://hl7.org/fhir/R4/search.html#token)         |                                                    |
+| SHALL       | [patient](clinical_data.html#medicationdispense-patient)           | [reference](https://hl7.org/fhir/R4/search.html#reference) | The identity of a patient to list dispenses for    |
+| SHALL       | [status](clinical_data.html#medicationdispense-status)             | [token](https://hl7.org/fhir/R4/search.html#token)         | Returns dispenses with a specified dispense status |
+| SHOULD      | [whenprepared](clinical_data.html#medicationdispense-whenprepared) | [date](https://hl7.org/fhir/R4/search.html#date)           | 	Returns dispenses prepared on this date           |
+
+A Clinical Data Provider supports at least the following search parameter combinations:
+
+| Conformance  | Parameters            | Example                                                              |
+|--------------|-----------------------|----------------------------------------------------------------------|
+| SHOULD       | patient+status        | `GET [base]/MedicationDispense?patient=[id]&status=[status]`         |
+| SHOULD       | patient+whenprepared  | `GET [base]/MedicationDispense?patient=[id]&whenprepared=[date]`     |
+
+#### MedicationDispense _id
+The Provider SHOULD support search by the logical identifier of the MedicationDispense resource:
+```
+GET [base]/MedicationDispense?_id=[id]
+```
+
+#### MedicationDispense patient
+The Provider SHALL support search by patient:
+```
+GET [base]/MedicationDispense?patient=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationDispense?patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing MedicationDispense resources that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
+
+#### MedicationDispense status
+The Provider SHOULD support search by status:
+```
+GET [base]/MedicationDispense?status=[status]&patient=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationDispense?status=completed&patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing MedicationDispense resources that are completed and reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
+
+#### MedicationDispense whenprepared
+The Provider SHOULD support search by date of preparation:
+```
+GET [base]/MedicationDispense?whenprepared=[date]&patient=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationDispense?whenprepared=ge2022-01-01&patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing MedicationDispense resources prepared on or after `2022-01-01` that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
+
+Where a Provider supports search by date, the Provider SHOULD support partial dates, the `eq`, `ge`, `le` operators and
+multiple date parameters. See Patient Index [birthdate](patient_index.html#patient-birthdate) for details.
+
+### MedicationRequest search
+Where the underlying system can reliably provide the information, a Clinical Data Provider SHOULD support the
+[search](https://hl7.org/fhir/R4/http.html#search) interaction on the
+[MedicationRequest](https://hl7.org/fhir/R4/medicationadministration.html) resource so that a Consumer can retrieve a
+set of MedicationRequest resources matching the search criteria and conforming to the
+[UKCore MedicationRequest](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationRequest?version=1.0.0) profile.
+
+A Clinical Data Provider supports at least the following search parameters:
+
+| Conformance | Parameter                                                     | Type                                                       | Description                                   |
+|-------------|---------------------------------------------------------------|------------------------------------------------------------|-----------------------------------------------|
+| SHOULD      | [_id](clinical_data.html#medicationrequest-_id)               | [token](https://hl7.org/fhir/R4/search.html#token)         |                                               |
+| SHALL       | [patient](clinical_data.html#medicationrequest-patient)       | [reference](https://hl7.org/fhir/R4/search.html#reference) | Returns prescriptions for a specific patient  |
+| SHALL       | [status](clinical_data.html#medicationrequest-status)         | [token](https://hl7.org/fhir/R4/search.html#token)         | Status of the prescription                    |
+| SHOULD      | [authoredon](clinical_data.html#medicationrequest-authoredon) | [date](https://hl7.org/fhir/R4/search.html#date)           | Return prescriptions written on this date     |
+
+A Clinical Data Provider supports at least the following search parameter combinations:
+
+| Conformance  | Parameters         | Example                                                       |
+|--------------|--------------------|---------------------------------------------------------------|
+| SHOULD       | patient+status     | `GET [base]/MedicationRequest?patient=[id]&status=[status]`   |
+| SHOULD       | patient+authoredon | `GET [base]/MedicationRequest?patient=[id]&authoredon=[date]` |
+
+#### MedicationRequest _id
+The Provider SHOULD support search by the logical identifier of the MedicationRequest resource:
+```
+GET [base]/MedicationRequest?_id=[id]
+```
+
+#### MedicationRequest patient
+The Provider SHALL support search by patient:
+```
+GET [base]/MedicationRequest?patient=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationRequest?patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing MedicationRequest resources that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
+
+#### MedicationRequest status
+The Provider SHOULD support search by status:
+```
+GET [base]/MedicationRequest?status=[status]&patient=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationRequest?status=completed&patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing MedicationRequest resources that are completed and reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
+
+#### MedicationRequest authoredon
+The Provider SHOULD support search by date on which the request was authored:
+```
+GET [base]/MedicationRequest?authoredon=[date]&patient=[id]
+```
+
+For example, when a Consumer sends the request `GET https://fhir.example-provider.nhs.uk/MedicationRequest?authoredon=ge2022-01-01&patient=b88f0099-5213-4502-a49d-cc3887027bdd`
+the Provider would respond with a Bundle containing MedicationRequest resources authored on or after `2022-01-01` that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
+
+Where a Provider supports search by date, the Provider SHOULD support partial dates, the `eq`, `ge`, `le` operators and
+multiple date parameters. See Patient Index [birthdate](patient_index.html#patient-birthdate) for details.
 
 ### MedicationStatement search
 Where the underlying system can reliably provide the information, a Clinical Data Provider SHOULD support the
