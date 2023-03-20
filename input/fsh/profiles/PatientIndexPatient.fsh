@@ -1,5 +1,5 @@
 Profile: UKCoreAccessPatientIndexPatient
-Parent: UKCore-Patient
+Parent: https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient
 Id: UKCoreAccessPatientIndexPatient
 Description: "UK Core Access Patient resource profile for patient index lookup, supporting basic data for identification"
 * ^status = #active
