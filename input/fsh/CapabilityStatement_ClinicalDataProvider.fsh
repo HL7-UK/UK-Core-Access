@@ -54,7 +54,7 @@ Title: "UKCore Access Clinical Data Provider"
 * insert RequiringSearchParam(date)
 
 //MedicationAdministration
-* insert ResourceWithExpectation(#MedicationStatement, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationAdministration, #SHOULD)
+* insert ResourceWithExpectation(#MedicationAdministration, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationAdministration, #SHOULD)
 * insert InteractionWithExpectation(#search-type, #SHALL)
 * insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(patient, #token, #SHALL)
@@ -70,7 +70,7 @@ Title: "UKCore Access Clinical Data Provider"
 * insert RequiringSearchParam(effective-time)
 
 //MedicationDispense
-* insert ResourceWithExpectation(#MedicationStatement, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationDispense, #SHOULD)
+* insert ResourceWithExpectation(#MedicationDispense, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationDispense, #SHOULD)
 * insert InteractionWithExpectation(#search-type, #SHALL)
 * insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(patient, #token, #SHALL)
@@ -86,7 +86,7 @@ Title: "UKCore Access Clinical Data Provider"
 * insert RequiringSearchParam(whenprepared)
 
 //MedicationRequest
-* insert ResourceWithExpectation(#MedicationStatement, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationDispense, #SHOULD)
+* insert ResourceWithExpectation(#MedicationRequest, https://fhir.hl7.org.uk/StructureDefinition/UKCore-MedicationRequest, #SHOULD)
 * insert InteractionWithExpectation(#search-type, #SHALL)
 * insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(patient, #token, #SHALL)
