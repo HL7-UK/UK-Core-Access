@@ -14,6 +14,7 @@ Title: "UKCore Access Patient Index Provider"
 * insert ResourceWithExpectation(#Patient, https://fhir.hl7.org.uk/ukcore-access/StructureDefinition/UKCoreAccessPatientIndexPatient, #SHALL)
 * insert InteractionWithExpectation(#search-type, #SHALL)
 * insert SearchParamWithExpectation(_id, #token, #SHOULD)
+* insert SearchParamWithExpectation(birthdate, #date, #SHOULD)
 * insert SearchParamWithExpectation(family, #string, #SHOULD)
 * insert SearchParamWithExpectation(gender, #token, #SHALL)
 * insert SearchParamWithExpectation(given, #string, #SHOULD)

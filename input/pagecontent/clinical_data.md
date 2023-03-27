@@ -67,7 +67,7 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing AllergyIntolerance resources that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
 
 #### AllergyIntolerance clinical-status
-The Provider SHOULD support search by clinical status:
+The Provider SHALL support search by clinical status:
 ```
 GET [base]/AllergyIntolerance?clinical-status=[status]&patient=[id]
 ```
@@ -138,7 +138,7 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing Immunization resources that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
 
 #### Immunization status
-The Provider SHOULD support search by status:
+The Provider SHALL support search by status:
 ```
 GET [base]/Immunization?status=[status]&patient=[id]
 ```
@@ -172,7 +172,7 @@ A Clinical Data Provider supports at least the following search parameters:
 | SHOULD      | [_id](clinical_data.html#medicationadministration-_id)                       | [token](https://hl7.org/fhir/R4/search.html#token)         |                                                                                              |
 | SHALL       | [patient](clinical_data.html#medicationadministration-patient)               | [reference](https://hl7.org/fhir/R4/search.html#reference) | The identity of a patient to list administrations for                                        |
 | SHALL       | [status](clinical_data.html#medicationadministration-status)                 | [token](https://hl7.org/fhir/R4/search.html#token)         | MedicationAdministration event status (for example one of active/paused/completed/nullified) |
-| SHOULD      | [effective-time](clinical_data.html#medicationadministration-effective-time) | [date](https://hl7.org/fhir/R4/search.html#date)           | Date administration happened (or did not happen)                                             |
+| SHALL       | [effective-time](clinical_data.html#medicationadministration-effective-time) | [date](https://hl7.org/fhir/R4/search.html#date)           | Date administration happened (or did not happen)                                             |
 
 A Clinical Data Provider supports at least the following search parameter combinations:
 
@@ -197,7 +197,7 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing MedicationAdministration resources that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
 
 #### MedicationAdministration status
-The Provider SHOULD support search by status:
+The Provider SHALL support search by status:
 ```
 GET [base]/MedicationAdministration?status=[status]&patient=[id]
 ```
@@ -206,7 +206,7 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing MedicationAdministration resources that are completed and reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
 
 #### MedicationAdministration effective-time
-The Provider SHOULD support search by effective date and time:
+The Provider SHALL support search by effective date and time:
 ```
 GET [base]/MedicationAdministration?effective-time=[date]&patient=[id]
 ```
@@ -256,7 +256,7 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing MedicationDispense resources that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
 
 #### MedicationDispense status
-The Provider SHOULD support search by status:
+The Provider SHALL support search by status:
 ```
 GET [base]/MedicationDispense?status=[status]&patient=[id]
 ```
@@ -315,7 +315,7 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing MedicationRequest resources that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
 
 #### MedicationRequest status
-The Provider SHOULD support search by status:
+The Provider SHALL support search by status:
 ```
 GET [base]/MedicationRequest?status=[status]&patient=[id]
 ```
@@ -374,7 +374,7 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing MedicationStatement resources that reference patient `b88f0099-5213-4502-a49d-cc3887027bdd`.
 
 #### MedicationStatement status
-The Provider SHOULD support search by status:
+The Provider SHALL support search by status:
 ```
 GET [base]/MedicationStatement?status=[status]&patient=[id]
 ```

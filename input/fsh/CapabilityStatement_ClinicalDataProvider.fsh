@@ -21,7 +21,7 @@ Title: "UKCore Access Clinical Data Provider"
 * insert InteractionWithExpectation(#search-type, #SHALL)
 * insert SearchParamWithExpectation(_id, #token, #SHOULD)
 * insert SearchParamWithExpectation(patient, #token, #SHALL)
-* insert SearchParamWithExpectation(clinical-status, #token, #SHOULD)
+* insert SearchParamWithExpectation(clinical-status, #token, #SHALL)
 * insert SearchParamWithExpectation(date, #date, #SHOULD)
 * insert SearchParamWithExpectation(last-date, #date, #SHOULD)
 
