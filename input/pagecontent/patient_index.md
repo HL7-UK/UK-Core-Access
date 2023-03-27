@@ -65,24 +65,20 @@ For example, when a Consumer sends the request `GET https://fhir.example-provide
 the Provider would respond with a Bundle containing Patient resources with NHS Number `9912003888`. [[Example](Bundle-Response-patientsearchbynhsnumber.html)]
 
 ##### Find a patient by CHI Number
-The national identifier within Scotland is the [CHI Number](https://www.ndc.scot.nhs.uk/Dictionary-A-Z/Definitions/index.asp?ID=128)
-which uses the identifier system `https://fhir.nhs.uk/Id/chi-number`.
+The national identifier within Scotland is the [CHI Number](https://www.ndc.scot.nhs.uk/Dictionary-A-Z/Definitions/index.asp?ID=128). 
 
 The Provider MAY support search by CHI Number.
 
-> TODO: CHI Number system
->
-> TODO: Add request and example
+No identifier system has been published. Potential implementers are recommended to contact the data standards team 
+for this domain.
 
 ##### Find a patient by H&C Number
-The national identifier within Northern Ireland is the [H&C Number](https://www.datadictionary.nhs.uk/attributes/health_and_care_number.html)
-which uses the identifier system `https://fhir.nhs.uk/Id/hc-number`.
+The national identifier within Northern Ireland is the [H&C Number](https://www.datadictionary.nhs.uk/attributes/health_and_care_number.html).
 
 The Provider MAY support search by H&C Number.
 
-> TODO: H&C Number system
->
-> TODO: Add request and example
+No identifier system has been published. Potential implementers are recommended to contact the data standards team
+for this domain.
 
 ##### Find a patient by local identifier
 Organisations holding patient data are likely to have their own identifier systems _e.g._ a hospital number from
