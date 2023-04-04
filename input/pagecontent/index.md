@@ -4,7 +4,7 @@ and subject of care access within the UK. It uses UK-specific resource profiles 
 [UK Core 1.0.0](https://simplifier.net/guide/uk-core-implementation-guide/Home?version=1.0.0) implementation guide and 
 provides implementers with a mechanism to share information that conforms to the UK Core profiles.
 
-The Implementation Guide is aligned to existing international specifications that provide similar 
+The Implementation Guide is aligned as far as possible to existing international specifications that provide similar 
 capabilities such as HL7 IPA, IHE PDQm and IHE QEDm and provides many [common capabilities](./related_specifications.html).
 
 Data Controllers holding personal data related to health and care may provide the capabilities specified in this
