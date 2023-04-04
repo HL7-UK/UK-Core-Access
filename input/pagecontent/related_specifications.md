@@ -45,12 +45,12 @@ Servers are required to support AllergyIntolerance search parameters as follows:
 #### Immunization search
 Servers are required to support Immunization search parameters as follows:
 
-| Parameter | Clinical Data Provider | IPA    | QEDm  |
-|-----------|------------------------|--------|-------|
-| _id       | SHOULD                 | MAY    | MAY  |
-| patient   | SHALL                  | SHALL  | SHALL | 
-| status    | SHOULD                 | SHOULD | MAY   | 
-| date      | SHOULD                 | SHOULD | MAY   | 
+| Parameter | Clinical Data Provider | IPA    | QEDm   |
+|-----------|------------------------|--------|--------|
+| _id       | SHOULD                 | SHOULD | SHOULD |
+| patient   | SHALL                  | SHALL  | SHALL  | 
+| status    | SHOULD                 | SHOULD | MAY    | 
+| date      | SHOULD                 | SHOULD | MAY    | 
 
 #### MedicationAdministration search
 Servers are required to support MedicationAdministration search parameters as follows:
@@ -65,29 +65,29 @@ Servers are required to support MedicationAdministration search parameters as fo
 #### MedicationDispense search
 Servers are required to support MedicationDispense search parameters as follows:
 
-| Parameter    | Clinical Data Provider | IPA | QEDm |
-|--------------|------------------------|-----|------|
-| _id          | SHOULD                 | MAY | MAY  |
-| patient      | SHALL                  | MAY | MAY  | 
-| status       | SHALL                  | MAY | MAY  | 
-| whenprepared | SHOULD                 | MAY | MAY  | 
+| Parameter    | Clinical Data Provider | IPA    | QEDm   |
+|--------------|------------------------|--------|--------|
+| _id          | SHOULD                 | SHOULD | SHOULD |
+| patient      | SHALL                  | MAY    | MAY    | 
+| status       | SHALL                  | MAY    | MAY    | 
+| whenprepared | SHOULD                 | MAY    | MAY    | 
 
 #### MedicationRequest search
 Servers are required to support MedicationRequest search parameters as follows:
 
-| Parameter  | Clinical Data Provider | IPA    | QEDm    |
-|------------|------------------------|--------|---------|
-| _id        | SHOULD                 | MAY    | MAY     |
-| patient    | SHALL                  | SHALL  | SHALL   | 
-| status     | SHALL                  | SHOULD | MAY     | 
-| authoredon | SHOULD                 | SHOULD | MAY     | 
+| Parameter  | Clinical Data Provider | IPA    | QEDm   |
+|------------|------------------------|--------|--------|
+| _id        | SHOULD                 | SHOULD | SHOULD |
+| patient    | SHALL                  | SHALL  | SHALL  | 
+| status     | SHALL                  | SHOULD | MAY    | 
+| authoredon | SHOULD                 | SHOULD | MAY    | 
 
 #### MedicationStatement search
 Servers are required to support MedicationStatement search parameters as follows:
 
-| Parameter | Clinical Data Provider | IPA    | QEDm  |
-|-----------|------------------------|--------|-------|
-| _id       | SHOULD                 | MAY    | MAY  |
-| patient   | SHALL                  | SHALL  | SHALL | 
-| status    | SHALL                  | SHOULD | MAY   | 
-| effective | SHOULD                 | MAY    | MAY   | 
+| Parameter | Clinical Data Provider | IPA    | QEDm   |
+|-----------|------------------------|--------|--------|
+| _id       | SHOULD                 | SHOULD | SHOULD |
+| patient   | SHALL                  | SHALL  | SHALL  | 
+| status    | SHALL                  | SHOULD | MAY    | 
+| effective | SHOULD                 | MAY    | MAY    | 

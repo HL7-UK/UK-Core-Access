@@ -79,7 +79,7 @@ menu:
   Resources:
     Artifacts: artifacts.html
     Safety and Security: safety_and_security.html
-    Related Standards: related_standards.html
+    Related Specifications: related_specifications.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
