@@ -11,7 +11,7 @@ specifying which resource types and interactions are supported by the FHIR endpo
 GET [base]/metadata
 ```
 
-A Consumer MAY use the CapabilityStatement during implementation to discover the capabilities of a FHIR endpoint provided by a UKCore Access Provider.
+A Consumer MAY use the CapabilityStatement during implementation to discover the capabilities of a FHIR endpoint provided by a UK Core Access Provider.
 
 A Consumer MAY retrieve the CapabilityStatement at runtime to discover the current capabilities of a FHIR endpoint and 
 to adapt to changes in capability. For example:

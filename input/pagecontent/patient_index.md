@@ -14,7 +14,7 @@ the Provider would respond with a CapabilityStatement resource. [[Example](Capab
 ### Patient search
 A Patient Index Provider SHALL support the [search](https://hl7.org/fhir/R4/http.html#search) interaction on the 
 [Patient](https://hl7.org/fhir/R4/patient.html) resource so that a Consumer can retrieve a set of Patient resources
-matching the search criteria and conforming to the [UKCoreAccess PatientIndexPatient](StructureDefinition-UKCoreAccessPatientIndexPatient.html) profile.
+matching the search criteria and conforming to the [UK Core Access PatientIndexPatient](StructureDefinition-UKCoreAccessPatientIndexPatient.html) profile.
 
 A Patient Index Provider supports at least the following search parameters:
 

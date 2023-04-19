@@ -1,5 +1,5 @@
 ### Patient Index Provider
-The Patient Index Provider capabilities in the UKCore Access implementation guide are closely related to patient search
+The Patient Index Provider capabilities in the UK Core Access implementation guide are closely related to patient search
 defined in international interoperability standards including:
 - [HL7 International Patient Access](https://build.fhir.org/ig/HL7/fhir-ipa/index.html)
 - [IHE Patient Demographics Query for Mobile](https://profiles.ihe.net/ITI/PDQm/index.html)
@@ -18,7 +18,7 @@ Servers are required to support Patient search parameters as follows:
 | birthdate  | SHOULD                 | SHOULD | SHALL |
 
 ### Clinical Data Provider
-The Clinical Data Provider capabilities in the UKCore Access implementation guide are closely related to clinical data retrieval
+The Clinical Data Provider capabilities in the UK Core Access implementation guide are closely related to clinical data retrieval
 defined in international interoperability standards including:
 - [HL7 International Patient Access](https://build.fhir.org/ig/HL7/fhir-ipa/index.html)
 - [IHE Query for Existing Data for Mobile](https://wiki.ihe.net/index.php/Query_for_Existing_Data_for_Mobile_(QEDm))

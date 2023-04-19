@@ -5,13 +5,13 @@ a Consumer can retrieve a [CapabilityStatement](https://hl7.org/fhir/R4/capabili
 ```
 GET [base]/metadata
 ```
-The CapabilityStatement SHALL be conformant with this implementation guide and SHOULD state that the FHIR endpoint instantiates the UKCore Access Clinical Data [capabilities](./CapabilityStatement-UKCoreAccessClinicalDataProvider.html).
+The CapabilityStatement SHALL be conformant with this implementation guide and SHOULD state that the FHIR endpoint instantiates the UK Core Access Clinical Data [capabilities](./CapabilityStatement-UKCoreAccessClinicalDataProvider.html).
 The Provider MAY provide further capabilities at this FHIR endpoint, in addition to those required by a Clinical Data Provider.
 
 ### Patient search
 A Clinical Data Provider SHALL support the [search](https://hl7.org/fhir/R4/http.html#search) interaction on the
 [Patient](https://hl7.org/fhir/R4/patient.html) resource so that a Consumer can retrieve a set of Patient resources
-matching the search criteria and conforming to the [UKCore Patient](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-Patient?version=1.0.0) profile.
+matching the search criteria and conforming to the [UK Core Patient](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-Patient?version=1.0.0) profile.
 
 A Clinical Data Provider supports at least the following search parameters:
 
@@ -31,7 +31,7 @@ Where the underlying system can reliably provide the information, a Clinical Dat
 [search](https://hl7.org/fhir/R4/http.html#search) interaction on the 
 [AllergyIntolerance](https://hl7.org/fhir/R4/allergyintolerance.html) resource so that a Consumer can retrieve a 
 set of AllergyIntolerance resources matching the search criteria and conforming to the 
-[UKCore AllergyIntolerance](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance?version=1.0.0) profile.
+[UK Core AllergyIntolerance](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-AllergyIntolerance?version=1.0.0) profile.
 
 A Clinical Data Provider supports at least the following search parameters:
 
@@ -104,7 +104,7 @@ Where the underlying system can reliably provide the information, a Clinical Dat
 [search](https://hl7.org/fhir/R4/http.html#search) interaction on the
 [Immunization](https://hl7.org/fhir/R4/immunization.html) resource so that a Consumer can retrieve a
 set of Immunization resources matching the search criteria and conforming to the
-[UKCore Immunization](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-Immunization?version=1.0.0) profile.
+[UK Core Immunization](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-Immunization?version=1.0.0) profile.
 
 A Clinical Data Provider supports at least the following search parameters:
 
@@ -163,7 +163,7 @@ Where the underlying system can reliably provide the information, a Clinical Dat
 [search](https://hl7.org/fhir/R4/http.html#search) interaction on the
 [MedicationAdministration](https://hl7.org/fhir/R4/medicationadministration.html) resource so that a Consumer can retrieve a
 set of MedicationAdministration resources matching the search criteria and conforming to the
-[UKCore MedicationAdministration](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationAdministration?version=1.0.0) profile.
+[UK Core MedicationAdministration](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationAdministration?version=1.0.0) profile.
 
 A Clinical Data Provider supports at least the following search parameters:
 
@@ -222,7 +222,7 @@ Where the underlying system can reliably provide the information, a Clinical Dat
 [search](https://hl7.org/fhir/R4/http.html#search) interaction on the
 [MedicationDispense](https://hl7.org/fhir/R4/medicationdispense.html) resource so that a Consumer can retrieve a
 set of MedicationDispense resources matching the search criteria and conforming to the
-[UKCore MedicationDispense](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationDispense?version=1.0.0) profile.
+[UK Core MedicationDispense](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationDispense?version=1.0.0) profile.
 
 A Clinical Data Provider supports at least the following search parameters:
 
@@ -281,7 +281,7 @@ Where the underlying system can reliably provide the information, a Clinical Dat
 [search](https://hl7.org/fhir/R4/http.html#search) interaction on the
 [MedicationRequest](https://hl7.org/fhir/R4/medicationadministration.html) resource so that a Consumer can retrieve a
 set of MedicationRequest resources matching the search criteria and conforming to the
-[UKCore MedicationRequest](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationRequest?version=1.0.0) profile.
+[UK Core MedicationRequest](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationRequest?version=1.0.0) profile.
 
 A Clinical Data Provider supports at least the following search parameters:
 
@@ -340,7 +340,7 @@ Where the underlying system can reliably provide the information, a Clinical Dat
 [search](https://hl7.org/fhir/R4/http.html#search) interaction on the
 [MedicationStatement](https://hl7.org/fhir/R4/medicationstatement.html) resource so that a Consumer can retrieve a
 set of MedicationStatement resources matching the search criteria and conforming to the
-[UKCore MedicationStatement](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationStatement?version=1.0.0) profile.
+[UK Core MedicationStatement](https://simplifier.net/guide/uk-core-implementation-guide/Home/ProfilesandExtensions/ProfileUKCore-MedicationStatement?version=1.0.0) profile.
 
 A Clinical Data Provider supports at least the following search parameters:
 

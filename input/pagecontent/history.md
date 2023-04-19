@@ -1,6 +1,6 @@
-This table provides a list of all the versions of UKCore Access that are available.
+This table provides a list of all the versions of UK Core Access that are available.
 
-The following versions of UKCore Access have been published:
+The following versions of UK Core Access have been published:
 
 | Date                 | Version       | Description                                                    | Links                                                                                                                                                                                                                                                                                                                                                               |
 |:---------------------|:--------------|:---------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

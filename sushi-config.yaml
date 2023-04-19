@@ -3,10 +3,10 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: ukcore-access
-canonical: https://fhir.hl7.org.uk/ukcore-access
+id: uk-core-access
+canonical: https://fhir.hl7.org.uk/uk-core-access
 name: UKCoreAccess
-title: HL7 UK - UKCore Access
+title: HL7 UK - UK Core Access
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
 version: 0.1.0
